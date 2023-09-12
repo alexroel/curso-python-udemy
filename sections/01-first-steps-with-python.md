@@ -9,7 +9,7 @@
 
 ---
 ## Introducción
-¡Bienvenidos a la sección "Primeros pasos con Python" de nuestro curso "Explorando Python"! En esta emocionante etapa de tu viaje de aprendizaje, te sumergirás en el fascinante mundo de la programación con Python. En esta sección, abordaremos los aspectos fundamentales que necesitas dominar para comenzar a escribir código Python de manera efectiva.
+¡Bienvenidos a la sección "Primeros pasos con Python" de nuestro curso "Python"! En esta emocionante etapa de tu viaje de aprendizaje, te sumergirás en el fascinante mundo de la programación con Python. En esta sección, abordaremos los aspectos fundamentales que necesitas dominar para comenzar a escribir código Python de manera efectiva.
 
 En primer lugar, aprenderemos cómo instalar Python y configurar un entorno de desarrollo adecuado para tu sistema operativo. Este paso es esencial para comenzar a programar con comodidad y eficiencia.
 
@@ -175,7 +175,7 @@ Los comentarios son una herramienta poderosa para hacer que tu código sea más 
 
 ---
 ## Resumen
-En la sección "Primeros pasos con Python" de nuestro curso "Explorando Python", nos sumergimos en el emocionante mundo de la programación con Python. En esta etapa, exploramos los aspectos fundamentales que necesitábamos dominar para empezar a escribir código Python de manera efectiva.
+En la sección "Primeros pasos con Python" de nuestro curso "Python", nos sumergimos en el emocionante mundo de la programación con Python. En esta etapa, exploramos los aspectos fundamentales que necesitábamos dominar para empezar a escribir código Python de manera efectiva.
 
 En primer lugar, aprendimos cómo instalar Python y configurar un entorno de desarrollo adecuado para nuestro sistema operativo. Este paso fue esencial para comenzar a programar con comodidad y eficiencia.
 
