@@ -260,6 +260,72 @@ En resumen, `break` se usa para salir inmediatamente de un bucle, mientras que `
 
 ---
 ## Ejercicio de sección
+¡Por supuesto! Crearemos un proyecto de adivinar el número en el que utilizaremos las estructuras de control básicas que mencionaste: condicionales (if, else, elif), bucles (while, for), uso de rangos y enumeración en bucles, y control de flujo con break y continue.
+
+## Proyecto: Juego de Adivina el Número
+
+### Introducción
+Este proyecto implica crear un juego simple llamado "Adivina el Número". El juego consiste en que el jugador intenta adivinar un número aleatorio generado por la computadora dentro de un rango específico. Se utilizan estructuras de control básicas para manejar las adivinanzas del jugador y proporcionar pistas hasta que adivine el número correcto.
+
+### Objetivo del Juego
+El objetivo del juego es que el jugador adivine el número aleatorio generado por la computadora dentro del rango dado.
+
+### Estructuras de Control Utilizadas
+1. **Condicionales (if, else, elif):** Se utilizan condicionales para verificar si la adivinanza del jugador es mayor, menor o igual al número aleatorio.
+
+2. **Bucles (while):** Se utiliza un bucle while para permitir que el jugador haga múltiples adivinanzas hasta que adivine correctamente el número.
+
+3. **Uso de Rangos y Enumeración en Bucles:** Se establece un rango de números dentro del cual el jugador puede hacer adivinanzas.
+
+4. **Control de Flujo con Break y Continue:** Se usa `break` para salir del bucle cuando el jugador adivina correctamente. No se utiliza `continue` en este juego.
+
+### Implementación
+Para implementar este juego, necesitarás un entorno de programación y conocimientos básicos de Python. Puedes utilizar un entorno de desarrollo como Jupyter Notebook, PyCharm o cualquier editor de texto compatible con Python.
+
+1. **Generación del Número Aleatorio:**
+   Genera un número aleatorio dentro de un rango específico.
+
+2. **Interacción con el Jugador:**
+   Permite al jugador hacer adivinanzas y proporciona pistas sobre si la adivinanza es mayor, menor o igual al número generado.
+
+3. **Bucle para Adivinanzas:**
+   Utiliza un bucle while para permitir al jugador hacer adivinanzas repetidas hasta que adivine correctamente.
+
+4. **Condiciones de Finalización:**
+   Si el jugador adivina correctamente, muestra un mensaje de victoria. Si decide salir del juego, muestra un mensaje de despedida.
+
+### Código del juego
+
+~~~python
+import random
+
+# Genera un número aleatorio dentro del rango [1, 100]
+numero_secreto = random.randint(1, 100)
+
+intentos = 0
+max_intentos = 10
+
+print("¡Bienvenido a Adivina el Número!")
+print(f"Adivina un número entre 1 y 100. Tienes un máximo de {max_intentos} intentos.")
+
+while intentos < max_intentos:
+    intento = int(input("Introduce tu adivinanza: "))
+    intentos += 1
+
+    if intento < numero_secreto:
+        print("El número es mayor. Intenta de nuevo.")
+    elif intento > numero_secreto:
+        print("El número es menor. Intenta de nuevo.")
+    else:
+        print(f"¡Felicidades! ¡Adivinaste el número secreto {numero_secreto} en {intentos} intentos!")
+        break
+
+if intentos >= max_intentos:
+    print(f"¡Agotaste tus {max_intentos} intentos! El número secreto era {numero_secreto}.")
+    
+print("Gracias por jugar. ¡Hasta la próxima!")
+
+~~~
 
 ---
 ## Resumen
