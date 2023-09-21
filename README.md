@@ -21,7 +21,7 @@ Enseñar Python desde cero hasta el nivel de maestría es un desafío emocionant
 - Control de flujo con break y continue
 - Ejercicios de práctica
 
-**Sección 3: Estructuras de Datos Fundamentales**
+**Sección 3: Estructuras de Datos**
 - Listas, tuplas y diccionarios
 - Acceso y manipulación de elementos en estructuras de datos
 - Iteración sobre estructuras de datos
