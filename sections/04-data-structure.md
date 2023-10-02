@@ -623,6 +623,132 @@ Tanto las colas como las pilas son estructuras de datos importantes en programac
 ---
 ## Proyecto de sección
 
+# Indicadores del Centro Médico Tu Salud
+
+El **Centro Médico Tu Salud** realiza pruebas ocupacionales diariamente para determinar si los trabajadores están capacitados para trabajos de alto esfuerzo físico. Los resultados de estas pruebas se registran como Positivo (P) o Negativo (N), junto con la edad y el género de la persona. Para indicar el final del día, se ingresa "S" en el resultado de la prueba.
+
+## Indicadores Solicitados
+
+### Promedio de Edad
+
+- Promedio de edad de las personas que dieron Positivo (P).
+- Promedio de edad de las personas que dieron Negativo (N).
+
+Ejemplo: 
+   En un día se realizaron 5 pruebas. 
+   Las personas que dieron como resultado Positivo tenían las edades de 25, 30 y 35, entonces su promedio de edad sería de 30 años. 
+   Las personas que dieron como resultado Negativo tenían las edades de 15 y 19, entonces su promedio de edad seria de 17 años.
+
+### Porcentaje de Mujeres Mayores a 33 años que dieron Positivo (P)
+
+- Porcentaje de mujeres mayores a 33 años que dieron Positivo (P).
+
+Ejemplo: 
+   En un día se realizaron 50 pruebas, de las cuales, 10 fueron realizadas a mujeres mayores a 33 años; y de estas 10 pruebas, 5 dieron resultado Positivo. Entonces el resultado que se solicita obtener sería 50.00% (Las 5 personas que dieron positivo, del total de 10 mujeres mayores a 33 años).
+
+### Porcentaje de Resultados Positivos (P) y Negativos (N)
+
+- Porcentaje de resultados Positivos (P).
+- Porcentaje de resultados Negativos (N).
+
+Ejemplo: 
+   En un día se realizaron 100 pruebas, de las cuales 30 dieron resultado Positivo y 70 dieron resultado Negativo; entonces los porcentajes solicitados serían 30.00% y 70.00% respectivamente.
+
+### Número de Personas Mayores al Promedio de Edad con Resultados Positivos (P) y Negativos (N)
+
+- Número de personas mayores al promedio de edad que dieron Positivo (P).
+- Número de personas mayores al promedio de edad que dieron Negativo (N).
+
+Ejemplo:
+   En un día se realizaron 5 pruebas. 
+   Las edades de las personas que son de 25, 30, 40, 50 y 35, entonces su promedio de edad sería de 36 años. 
+   Las personas que dieron como resultado Positivo tenían las edades de 25 y 40, entonces el número seria de 1 (el que tiene 40 años).
+   Las personas que dieron como resultado Negativo tenían las edades de 30, 50 y 35, entonces el número seria de 1 (el que tiene 50 años).
+
+### Código del proyecto 
+
+~~~python
+# Lista para guardar todas las pruebas del día
+pruebas_dia = []
+
+# Variables para almacenar resultados
+total_positivos = 0
+total_edades_positivos = 0
+total_negativos = 0
+total_edades_negativos = 0
+
+# Lista con algunos datos para probar
+# pruebas_dia = [
+#         {'resultado': 'P', 'edad': 25, 'genero': 'F'},
+#         {'resultado': 'N', 'edad': 30, 'genero': 'M'},
+#         {'resultado': 'P', 'edad': 40, 'genero': 'F'},
+#         {'resultado': 'N', 'edad': 50, 'genero': 'M'},
+#         {'resultado': 'N', 'edad': 35, 'genero': 'F'},
+#         ]
+
+# Bucle para registrar todas las pruebas
+while True:
+    resultado = input("Ingrese el resultado (P, N o S): ")
+    if resultado == "S" or resultado == "s":
+       break
+
+    edad = int(input("Ingrese su edad: "))
+    genero = input("Ingrese su género (F, M): ")
+
+    # Guardar la prueba en la lista
+    pruebas_dia.append({"resultado": resultado, "edad": edad, "genero": genero})
+
+total_mujeres_mayores = 0
+total_mujeres_mayores_positivos = 0
+
+total_personas = 0
+total_edad = 0
+
+# Calcular promedio de edad de las personas
+for prueba in pruebas_dia:
+    if prueba["resultado"] == "P":
+        total_positivos += 1
+        total_edades_positivos += prueba["edad"]
+    else:
+        total_negativos += 1
+        total_edades_negativos += prueba["edad"]
+
+    if prueba["genero"] == "F" and prueba["edad"] > 33:
+        total_mujeres_mayores += 1
+        if prueba["resultado"] == "P":
+            total_mujeres_mayores_positivos += 1
+
+    total_personas += 1
+    total_edad += prueba["edad"]
+
+# Calcular el promedio general de edades
+promedio_general_edades = total_edad / total_personas
+
+# Imprimir resultados
+print(f"Promedio de edades de personas positivas: {round(total_edades_positivos / total_positivos, 2)} años")
+print(f"Promedio de edades de personas negativas: {round(total_edades_negativos / total_negativos, 2)} años")
+
+print(f"Porcentaje de mujeres mayores a 33 años que dieron positivo: {round((total_mujeres_mayores_positivos / total_mujeres_mayores) * 100, 2)} %")
+
+print(f"Porcentaje que dieron positivo: {round((total_positivos / total_personas) * 100, 2)} %")
+print(f"Porcentaje que dieron negativo: {round((total_negativos / total_personas) * 100, 2)} %")
+
+# Listas para calcular los promedios de edades positivos y negativos
+edades_mayores_promedio_positivos = []
+edades_mayores_promedio_negativos = []
+for prueba in pruebas_dia:
+    if prueba['resultado'] == "P":
+        if prueba['edad'] > promedio_general_edades:
+            edades_mayores_promedio_positivos.append(prueba['edad'])
+    else:
+        if prueba['edad'] > promedio_general_edades:
+            edades_mayores_promedio_negativos.append(prueba['edad'])
+
+print(f"Personas con edades mayores al promedio general {promedio_general_edades}, que dieron positivo: {edades_mayores_promedio_positivos} años")
+print(f"Personas con edades mayores al promedio general {promedio_general_edades}, que dieron negativo: {edades_mayores_promedio_negativos} años")
+
+
+~~~
 
 ---
 ## Resumen
