@@ -5,9 +5,10 @@
 3. [Alcance de variables (scope)](#alcance-de-variables-scope)
 4. [Argumentos indefinidos](#argumentos-indefinidos)
 5. [Función recursiva](#función-recursiva)
-6. [Módulos y paquetes](#módulos-y-paquetes)
-7. [Proyecto de sección](#proyecto-de-sección)
-8. [Resumen](#resumen)
+6. [Anotaciones de tipos](#anotaciones-de-tipos)
+7. [Módulos y paquetes](#módulos-y-paquetes)
+8. [Proyecto de sección](#proyecto-de-sección)
+9. [Resumen](#resumen)
 
 ---
 ## Introducción
@@ -191,6 +192,78 @@ Algunas cosas a considerar al trabajar con funciones recursivas:
 Espero que este ejemplo te ayude a entender cómo se utiliza la recursión en Python. Si tienes alguna pregunta adicional o necesitas más clarificaciones, no dudes en preguntar.
 
 ---
+## Anotaciones de tipos
+Las "anotaciones de tipos" en Python se refieren a la capacidad de especificar el tipo de datos que se espera que una función o variable contenga. Estas anotaciones no afectan el comportamiento del código en tiempo de ejecución, pero pueden ser útiles para proporcionar información a otros desarrolladores y herramientas que analizan el código.
+
+Aquí tienes ejemplos de cómo se pueden utilizar las anotaciones de tipos en Python:
+
+1. **Anotaciones de tipos para funciones:**
+
+```python
+def suma(a: int, b: int) -> int:
+    return a + b
+
+resultado = suma(3, 5)  # La función espera dos enteros y devuelve un entero
+print(resultado)  # Imprime 8
+```
+
+En este ejemplo, la función `suma` tiene anotaciones de tipos que indican que espera dos argumentos de tipo entero (`int`) y devuelve un entero.
+
+2. **Anotaciones de tipos para variables:**
+
+```python
+edad: int = 25
+nombre: str = "Alice"
+```
+
+Aquí, las variables `edad` y `nombre` tienen anotaciones de tipo indicando que `edad` es de tipo entero (`int`) y `nombre` es de tipo cadena (`str`).
+
+3. **Anotaciones de tipos para estructuras de datos:**
+
+```python
+from typing import List, Tuple
+
+def obtener_lista_enteros() -> List[int]:
+    return [1, 2, 3]
+
+def obtener_tupla() -> Tuple[int, str]:
+    return (42, "hola")
+```
+
+En este caso, se utilizan anotaciones de tipos para indicar que `obtener_lista_enteros` devuelve una lista de enteros y que `obtener_tupla` devuelve una tupla con un entero y una cadena.
+
+4. **Anotaciones de tipos para funciones con argumentos opcionales:**
+
+```python
+def saludo(nombre: str, veces: int = 1) -> str:
+    return f"Hola {nombre}! " * veces
+
+print(saludo("Alice"))  # Hola Alice!
+print(saludo("Bob", 3))  # Hola Bob! Hola Bob! Hola Bob!
+```
+
+Aquí, la función `saludo` tiene una anotación de tipo para el argumento `nombre` (cadena) y `veces` (entero con un valor predeterminado de 1).
+
+Recuerda que las anotaciones de tipos en Python son opcionales y no afectan al comportamiento del programa durante la ejecución. Puedes utilizar herramientas externas como `mypy` para realizar comprobaciones de tipos en tu código si así lo deseas.
+
+Para agregar anotaciones de tipos a la función `factorial`, debemos especificar los tipos de los parámetros y el tipo de retorno. Aquí te muestro cómo hacerlo:
+
+```python
+def factorial(n: int) -> int:
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Ejemplo de uso
+resultado: int = factorial(5)
+print("El factorial de 5 es:", resultado)  # Imprime: El factorial de 5 es: 120
+
+```
+
+En este caso, se ha anotado `n` con el tipo `int` para indicar que es un entero y se ha anotado el tipo de retorno de la función con `-> int` para indicar que la función devuelve un entero. Estas anotaciones proporcionan información sobre los tipos esperados y ayudan a los desarrolladores a comprender mejor cómo se debe usar la función.
+
+---
 ## Módulos y paquetes
 En Python, los módulos y paquetes son formas de organizar y reutilizar código. Permiten dividir un programa en componentes más pequeños, lo que facilita la gestión, la reutilización y la colaboración en proyectos de gran escala.
 
@@ -243,6 +316,101 @@ modulo2.funcion2()
 
 ---
 ## Proyecto de sección
+**Desarrollo de un Módulo de Saludos Aleatorios**
+
+Bienvenidos al proyecto "Desarrollo de un Módulo de Saludos Aleatorios". El objetivo de este proyecto es crear un módulo llamado `greetings.py` que contendrá tres funciones proporcionadas: `random_format`, `hello` y `hellos`.
+
+1. **random_format:** Una función que generará un saludo aleatorio a partir de una lista de saludos y nombres proporcionada como argumento.
+
+2. **hello:** Una función que tomará un nombre como argumento y generará un saludo personalizado utilizando el nombre proporcionado.
+
+3. **hellos:** Una función que tomará una lista de nombres y generará saludos personalizados para cada nombre en la lista.
+
+El proyecto permitirá practicar varios conceptos, incluyendo la importación de módulos, el uso de funciones, manipulación de listas y diccionarios, así como el manejo de errores.
+
+¿Listos para comenzar con el desarrollo del módulo de saludos aleatorios? ¡Adelante y demuestren sus habilidades!
+
+### Código del modulo `greetings.py`
+
+~~~python
+import random 
+from typing import List, Dict
+
+# La función 'random_format' devuelve uno de varios mensajes de saludo seleccionado al azar.
+def random_format() -> str:
+    # Una lista de formatos de mensaje.
+    formats = [
+        "¡Hola, {}! ¡Bienvenido!",
+        "¡Es genial verte, {}!",
+        "¡Saludos, {}! ¡Encantado de conocerte!",
+    ]
+
+    # Seleccionar aleatoriamente un formato de mensaje especificando un índice aleatorio
+    # para la lista de formatos.
+    return random.choice(formats)
+
+# La función 'hello' devuelve un saludo para la persona con el nombre dado.
+def hello(name: str) -> str:
+     # Si no se proporcionó un nombre, se lanza un error con un mensaje.
+    if name == "":
+        return f"Error: nombre vacío."
+    
+    # Si se recibió un nombre, se devuelve un mensaje que incluye el nombre
+    # en un mensaje de bienvenida.
+    message = random_format().format(name)
+    #message = f"Hola, {name}. !Bienvenido!"
+    return message
+
+# Hola devuelve un mapa que asocia a cada una de las personas nombradas
+# con un mensaje de saludo.
+def hellos(names: List[str]) -> Dict[str, str]:
+    # Un diccionario para asociar nombres con mensajes.
+    messages = {}
+
+    # Itera sobre la lista recibida de nombres, llamando
+    # a la función hello para obtener un mensaje para cada nombre.
+    for name in names:
+        message = hello(name)
+        messages[name] = message
+
+    return messages    
+~~~
+Este código en Python define varias funciones para generar mensajes de saludo de manera aleatoria. Aquí está la explicación de cada parte del código:
+
+1. `import random`: Importa el módulo `random`, que se utiliza para generar números aleatorios.
+
+2. `from typing import List, Dict`: Importa las clases List y Dict del módulo typing, que se utilizan para proporcionar tipos de datos explícitos en la firma de las funciones.
+
+3. `def random_format() -> str`: Define una función llamada `random_format` que devuelve un mensaje de saludo seleccionado al azar de una lista de formatos.
+
+   - Se crea una lista llamada `formats` que contiene varios formatos de mensaje.
+   - Se utiliza `random.choice` para seleccionar aleatoriamente un formato de mensaje de la lista y se devuelve.
+
+4. `def hello(name: str) -> str`: Define una función llamada `hello` que recibe un nombre como argumento y devuelve un mensaje de saludo.
+
+   - Si no se proporciona un nombre (nombre vacío), se devuelve un mensaje de error.
+   - Si se proporciona un nombre, se llama a `random_format()` para obtener un formato de mensaje aleatorio y se inserta el nombre en el mensaje de bienvenida.
+
+5. `def hellos(names: List[str]) -> Dict[str, str]`: Define una función llamada `hellos` que recibe una lista de nombres y devuelve un diccionario que asocia cada nombre con un mensaje de saludo.
+
+   - Itera sobre la lista de nombres, llamando a la función `hello` para obtener un mensaje de saludo para cada nombre.
+   - Asocia cada nombre con su respectivo mensaje en un diccionario y lo devuelve al final.
+
+En resumen, el código genera mensajes de saludo aleatorios utilizando diferentes formatos y devuelve estos mensajes asociados a nombres proporcionados como entrada.
+
+### Probanco código 
+
+~~~python
+import greetings 
+
+print(greetings.hello("Alex"))
+
+nombres = ["Alex", "Juan", "Perdro", "Suny"]
+
+saludos = greetings.Hellos(nombres)
+for saludo in saludos.values():
+    print(saludo)
+~~~
 
 
 ---
