@@ -3,8 +3,8 @@
 1. [Introducción](#introducción)
 2. [Variables](#variables)
 3. [Tipos de datos](#tipos-de-datos)
-4. [Operadores y expresiones](#operadores-y-expresiones)
-5. [Salida y entrada de datos](#salida-y-entrada-de-datos)
+4. [Salida de datos](#salida-de-datos)
+5. [Entrada de datos](#entrada-de-datos)
 6. [Conversión de tipos](#conversión-de-tipos)
 7. [Proyecto de sección](#proyectos-de-sección)
 8. [Resumen](#resumen)
@@ -54,96 +54,46 @@ Recuerda que la elección de nombres de variables debe ser significativa y segui
 
 ---
 ## Tipos de datos
-En Python, como en muchos lenguajes de programación, existen varios tipos de datos que se utilizan para representar diferentes tipos de información. Aquí están los tipos de datos básicos en Python:
+A continuación, se presenta una tabla con algunos tipos de datos en Python, cómo identificar su tipo y ejemplos de cada uno:
 
-1. **Enteros (`int`):** Representan números enteros, como 1, -5, 100, etc.
+| Tipo de Dato | Descripción                                          | Ejemplo               | Cómo Saber el Tipo  |
+|--------------|------------------------------------------------------|-----------------------|----------------------|
+| `int`        | Números enteros sin decimales                        | `edad = 25`           | `type(edad)`         |
+| `float`      | Números con decimales                                | `altura = 1.75`       | `type(altura)`       |
+| `str`        | Cadenas de texto                                     | `nombre = "Juan"`     | `type(nombre)`       |
+| `bool`       | Valores de verdad o falsedad (booleanos)             | `es_mayor = True`     | `type(es_mayor)`     |
+| `list`       | Listas: colecciones ordenadas de elementos           | `numeros = [1, 2, 3]`  | `type(numeros)`      |
+| `tuple`      | Tuplas: colecciones inmutables de elementos          | `coordenadas = (3, 7)`| `type(coordenadas)`  |
+| `dict`       | Diccionarios: pares clave-valor                      | `persona = {'nombre': 'Ana', 'edad': 30}`| `type(persona)`  |
+| `set`        | Conjuntos: colecciones no ordenadas de elementos únicos | `colores = {'rojo', 'verde', 'azul'}` | `type(colores)` |
 
-2. **Punto Flotante (`float`):** Representan números con decimales, como 3.14, -0.5, 2.0, etc.
+Para saber el tipo de dato de una variable, puedes utilizar la función `type()`. Por ejemplo:
 
-3. **Cadenas de Texto (`str`):** Representan secuencias de caracteres. Se crean utilizando comillas simples ('...') o comillas dobles ("...").
-
-4. **Booleanos (`bool`):** Representan los valores de verdad, que pueden ser `True` (verdadero) o `False` (falso). Son esenciales para la lógica y el control de flujo.
-
-5. **Listas (`list`):** Son colecciones ordenadas y modificables de elementos. Los elementos pueden ser de diferentes tipos.
-
-6. **Tuplas (`tuple`):** Son similares a las listas, pero son inmutables, lo que significa que no se pueden modificar después de la creación.
-
-7. **Diccionarios (`dict`):** Son colecciones de pares clave-valor. Las claves son únicas y se utilizan para acceder a los valores asociados.
-
-8. **Conjuntos (`set`):** Son colecciones no ordenadas de elementos únicos. Se utilizan para realizar operaciones matemáticas de conjuntos.
-
-9. **Ninguno (`NoneType`):** Representa la ausencia de valor. Se utiliza en situaciones en las que una variable no tiene un valor asignado.
-
-10. **Bytes (`bytes`) y Bytesarray (`bytearray`):** Representan secuencias de bytes utilizados para manipular datos binarios.
-
-11. **Rango (`range`):** Representa una secuencia inmutable de números enteros.
-
-12. **Objetos (`object`):** Todos los tipos de datos en Python son objetos, incluyendo tipos internos y definidos por el usuario.
-
-Estos son los tipos de datos más básicos en Python. Cada tipo de dato tiene sus propias características y métodos asociados. Python es un lenguaje de programación de tipado dinámico, lo que significa que no es necesario declarar explícitamente el tipo de dato de una variable; Python determinará el tipo en función del valor asignado.
-
----
-## Operadores y expresiones
-Los operadores y expresiones son componentes esenciales en la programación, ya que te permiten realizar cálculos, combinar valores y tomar decisiones. En Python, existen varios tipos de operadores y formas de construir expresiones. Aquí te proporciono una descripción general de los operadores y las expresiones en Python:
-
-**Operadores Aritméticos:**
-- `+` : Suma
-- `-` : Resta
-- `*` : Multiplicación
-- `/` : División (siempre devuelve un valor de punto flotante)
-- `//` : División entera (descarta la parte decimal)
-- `%` : Módulo (devuelve el residuo de la división)
-- `**` : Exponenciación
-
-**Operadores de Comparación:**
-- `==` : Igual a
-- `!=` : No igual a
-- `<` : Menor que
-- `>` : Mayor que
-- `<=` : Menor o igual que
-- `>=` : Mayor o igual que
-
-**Operadores Lógicos:**
-- `and` : Operador lógico AND
-- `or` : Operador lógico OR
-- `not` : Operador lógico NOT
-
-**Operadores de Asignación:**
-- `=` : Asignación
-- `+=` : Asignación con suma (puedes hacer lo mismo con otros operadores aritméticos)
-- `-=` : Asignación con resta
-- `*=` : Asignación con multiplicación
-- `/=` : Asignación con división
-- `//=`, `%=`, `**=` : Asignación con otros operadores
-
-**Expresiones:**
-Una expresión es una combinación de valores, variables y operadores que se evalúa y produce un resultado. Por ejemplo:
 ```python
-a = 10
-b = 5
-
-a * b - 2**b >= 20 and not (a % b) != 0 # False
+dato = 42
+print(type(dato))  # Salida: <class 'int'>
 ```
 
-**Operadores de Concatenación y Repetición:**
-- `+` : Concatenación de cadenas
-- `*` : Repetición de cadenas
+A continuación, algunos ejemplos adicionales:
 
-**Operadores de Pertenencia:**
-- `in` : Verifica si un valor está en una secuencia
-- `not in` : Verifica si un valor no está en una secuencia
+- Listas de diferentes tipos de datos:
 
-**Operadores de Identidad:**
-- `is` : Verifica si dos objetos son el mismo objeto en memoria
-- `is not` : Verifica si dos objetos no son el mismo objeto en memoria
+  ```python
+  mix_lista = [1, "dos", 3.0, True]
+  ```
 
-Estos son solo algunos de los operadores en Python. Las expresiones pueden combinarse de diversas maneras, y el uso de operadores y expresiones es fundamental para realizar cálculos y tomar decisiones en tus programas.
+- Operaciones con tipos de datos:
+
+  ```python
+  a = 5
+  b = 2.0
+  resultado = a + b  # El resultado será un float
+  ```
+
+Estos ejemplos ilustran cómo Python es dinámicamente tipado, lo que significa que el tipo de una variable puede cambiar durante la ejecución del programa. Sin embargo, es importante comprender y gestionar los tipos de datos para evitar errores y mejorar la legibilidad del código.
 
 ---
-## Salida y entrada de datos
-La entrada y salida de datos son componentes esenciales en la programación, ya que permiten que un programa interactúe con el usuario y con otros sistemas. En Python, hay varias formas de realizar entrada y salida de datos. A continuación, te mostraré algunas de las formas más comunes de hacerlo:
-
-### Salida de datos:
+## Salida de datos
 
 1. **Función `print()`**: La función `print()` se utiliza para mostrar información en la consola.
 
@@ -223,7 +173,8 @@ Esto es una cadena con comillas simples 'simples'
 
 Estos son algunos ejemplos de caracteres especiales comunes en Python, pero hay otros caracteres de escape que puedes usar para diversos fines. Puedes combinar estos caracteres especiales según tus necesidades para formatear cadenas de texto o manipular la salida de datos de la manera deseada.
 
-### Entrada de datos:
+---
+## Entrada de datos
 
 1. **Función `input()`**: La función `input()` permite al usuario introducir datos desde la consola. Ten en cuenta que los datos introducidos se almacenan como cadenas.
 
