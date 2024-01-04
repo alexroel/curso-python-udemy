@@ -188,13 +188,13 @@ print(f"Hola, {nombre}!")
 
    Puedes pasar argumentos directamente al script cuando lo ejecutas desde la línea de comandos:
 
-   ```python
+  ```python
    # script.py
    import sys
 
    
-  nombre = sys.argv[1]
-  print("Hola, " + nombre + "!")
+    nombre = sys.argv[1]
+    print("Hola, " + nombre + "!")
    ```
 
    Puedes ejecutar el script así:
