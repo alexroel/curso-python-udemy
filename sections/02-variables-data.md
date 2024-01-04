@@ -183,7 +183,27 @@ nombre = input("Por favor, ingresa tu nombre: ")
 print(f"Hola, {nombre}!")
 ```
 
-Estas son algunas de las formas más comunes de realizar entrada y salida de datos en Python. Puedes adaptar estas técnicas según tus necesidades específicas en tus programas.
+
+2. **Pasando argumentos al script**:
+
+   Puedes pasar argumentos directamente al script cuando lo ejecutas desde la línea de comandos:
+
+   ```python
+   # script.py
+   import sys
+
+   
+  nombre = sys.argv[1]
+  print("Hola, " + nombre + "!")
+   ```
+
+   Puedes ejecutar el script así:
+
+   ```bash
+   python script.py Juan
+   ```
+
+   Y obtendrás la salida: "Hola, Juan!".
 
 ---
 ## Conversión de tipos
