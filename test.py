@@ -1,36 +1,22 @@
-class Persona:
-    # Atributo de clase
-    especie = "Homo sapiens"
+# Solicitar al usuario que ingrese el monto de consumo
+total_amount = float(input("Ingrese el monto de consumo: $"))
 
-    def __init__(self, nombre, edad):
-        # Atributos de instancia
-        self.nombre = nombre
-        self.edad = edad
+# Calcular el descuento
+if total_amount > 50 and total_amount <= 100:
+    discount_percentage = 0.1
+elif total_amount > 100 and total_amount <= 200:
+    discount_percentage = 0.2
+elif total_amount > 200:
+    discount_percentage = 0.3
+else:
+    discount_percentage = 0.0
 
-    # Método de instancia
-    def presentarse(self):
-        return f"Hola, soy {self.nombre} y tengo {self.edad} años."
+# Calcular el monto final con descuento
+discount_amount = total_amount * discount_percentage
+final_amount = total_amount - discount_amount
 
-    # Método de clase
-    @classmethod
-    def informacion(cls):
-        return f"Las personas pertenecen a la especie {cls.especie}."
-
-# Crear instancias de Persona
-persona1 = Persona("Juan", 30)
-persona2 = Persona("Maria", 25)
-
-# Acceder a atributos de instancia
-print(persona1.nombre)  # Juan
-print(persona2.nombre)  # Maria
-
-# Acceder a atributo de clase
-print(persona1.especie)  # Homo sapiens
-print(persona2.especie)  # Homo sapiens
-
-# Llamar a métodos de instancia
-print(persona1.presentarse())  # Hola, soy Juan y tengo 30 años.
-print(persona2.presentarse())  # Hola, soy Maria y tengo 25 años.
-
-# Llamar a método de clase
-print(Persona.informacion())  # Las personas pertenecen a la especie Homo sapiens.
+# Mostrar el resumen de la cuenta en español
+print("\nResumen de la cuenta:")
+print(f"Monto de consumo: ${total_amount:.2f}")
+print(f"Descuento aplicado: {discount_percentage * 100:.0f}%")
+print(f"Monto final con descuento: ${final_amount:.2f}")
