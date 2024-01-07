@@ -1,22 +1,27 @@
-# Solicitar al usuario que ingrese el monto de consumo
-total_amount = float(input("Ingrese el monto de consumo: $"))
+# # Solicitar al usuario que ingrese una palabra
+# palabra = input("Ingrese una palabra: ")
 
-# Calcular el descuento
-if total_amount > 50 and total_amount <= 100:
-    discount_percentage = 0.1
-elif total_amount > 100 and total_amount <= 200:
-    discount_percentage = 0.2
-elif total_amount > 200:
-    discount_percentage = 0.3
-else:
-    discount_percentage = 0.0
+# # convertirla a minúsculas)
+# palabra = palabra.lower()
 
-# Calcular el monto final con descuento
-discount_amount = total_amount * discount_percentage
-final_amount = total_amount - discount_amount
+# #eliminar espacios
+# palabra = palabra.replace(" ", "")
 
-# Mostrar el resumen de la cuenta en español
-print("\nResumen de la cuenta:")
-print(f"Monto de consumo: ${total_amount:.2f}")
-print(f"Descuento aplicado: {discount_percentage * 100:.0f}%")
-print(f"Monto final con descuento: ${final_amount:.2f}")
+# # Invertir palabra
+# palabra_invertida = palabra == palabra[::-1]
+
+# # Mostrar el resultado al usuario
+# if palabra == palabra_invertida:
+#     print(f"{palabra} es un palíndromo.")
+# else:
+#     print(f"{palabra} no es un palíndromo.")
+
+
+# Solicita al usuario que ingrese una palabra
+palabra = input("Ingrese una palabra: ")
+
+# Convierte la palabra a minúsculas y elimina espacios en blanco
+palabra = palabra.lower().replace(" ", "")
+
+# Muestra el resultado
+print("Es un palíndromo." if palabra == palabra[::-1] else "No es un palíndromo.")
