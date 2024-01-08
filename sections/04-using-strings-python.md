@@ -5,7 +5,7 @@
 3. [Estructura de una cadena](#estructura-de-una-cadena)
 4. [Métodos de cadenas](#métodos-de-cadenas)
 5. [Formato de cadena](#formato-de-cadena)
-6. [Proyecto sección](#proyecto-sección)
+6. [Proyecto de sección](#proyecto-de-sección)
 7. [Resumen](#resumen)
 
 ---
@@ -292,7 +292,7 @@ print(message)
 En resumen, cada enfoque de formato de cadena tiene sus propias características y ventajas. Los f-strings son más concisos y legibles, el método `format()` es más versátil, y el formato de signo de porcentaje es menos recomendado en Python moderno pero sigue siendo válido.
 
 ---
-## Proyecto sección 
+## Proyecto de sección 
 **Ejercicio: Verificación de Palíndromos**
 El ejercicio consiste en desarrollar un programa para verificar si una palabra ingresada es un palíndromo. Aquí están los pasos resumidos:
 
@@ -314,7 +314,7 @@ word = word.lower()
 word = word.replace(" ", "")
 
 # Invertir palabra
-inverted_word = word == word[::-1]
+inverted_word = word[::-1]
 
 # Mostrar el resultado al usuario
 if word == inverted_word:

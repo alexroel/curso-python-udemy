@@ -63,10 +63,10 @@ x = 10
 y = 5
 z = 3
 
-resultado = (x + y) * z > x**2  # True
+resultado = (x + y) * z > x**2  # false
 ```
 
-En este ejemplo, se realiza una operación aritmética `(x + y) * z` y luego se compara con `x**2`. El resultado final es `True` porque `(15) * 3` es mayor que `10**2`.
+En este ejemplo, se realiza una operación aritmética `(x + y) * z` y luego se compara con `x**2`. El resultado final es `False` porque `(15) * 3` es menor que `10**2`.
 
 ---
 ## Condicionales (if, else)
