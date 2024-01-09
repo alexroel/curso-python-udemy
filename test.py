@@ -1,44 +1,40 @@
-import tkinter as tk
+# Lista para almacenar los diccionarios de estudiantes
+registro_estudiantes = []
 
-class AplicacionDibujo:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Aplicación de Dibujo Simple")
+# Menú principal
+while True:
+    print("1. Registrar Estudiante")
+    print("2. Mostrar Registro")
+    print("3. Salir")
 
-        # Configuración de la interfaz
-        self.canvas = tk.Canvas(root, bg="white", width=600, height=400)
-        self.canvas.pack(expand=tk.YES, fill=tk.BOTH)
+    opcion = input("Seleccione una opción: ")
 
-        # Configuración de los botones
-        self.clear_button = tk.Button(root, text="Limpiar", command=self.limpiar_dibujo)
-        self.clear_button.pack(side=tk.BOTTOM)
+    if opcion == '1':
+        # Registrar estudiante
+        nombre = input("Ingrese el nombre del estudiante: ")
+        edad = int(input("Ingrese la edad del estudiante: "))
+        curso = input("Ingrese el curso del estudiante: ")
 
-        # Configuración del pincel
-        self.color_pincel = "black"
-        self.tamanio_pincel = 2
+        # Crear un diccionario con la información del estudiante y agregarlo al registro
+        estudiante = {'Nombre': nombre, 'Edad': edad, 'Curso': curso}
+        registro_estudiantes.append(estudiante)
 
-        # Configuración del dibujo
-        self.dibujando = False
-        self.canvas.bind("<B1-Motion>", self.dibujar)
-        self.canvas.bind("<Button-1>", self.iniciar_dibujo)
-        self.canvas.bind("<ButtonRelease-1>", self.detener_dibujo)
+        print("Estudiante registrado exitosamente!\n")
 
-    def dibujar(self, evento):
-        if self.dibujando:
-            x1, y1 = (evento.x - self.tamanio_pincel), (evento.y - self.tamanio_pincel)
-            x2, y2 = (evento.x + self.tamanio_pincel), (evento.y + self.tamanio_pincel)
-            self.canvas.create_oval(x1, y1, x2, y2, fill=self.color_pincel, outline=self.color_pincel, width=self.tamanio_pincel * 2)
+    elif opcion == '2':
+        # Mostrar registro
+        if registro_estudiantes:
+            print("\nRegistro de Estudiantes:")
+            for estudiante in registro_estudiantes:
+                print(f"Nombre: {estudiante['Nombre']}, Edad: {estudiante['Edad']}, Curso: {estudiante['Curso']}")
+            print()
+        else:
+            print("El registro está vacío. Registre estudiantes primero.\n")
 
-    def iniciar_dibujo(self, evento):
-        self.dibujando = True
+    elif opcion == '3':
+        # Salir del programa
+        print("Saliendo del programa. ¡Hasta luego!")
+        break
 
-    def detener_dibujo(self, evento):
-        self.dibujando = False
-
-    def limpiar_dibujo(self):
-        self.canvas.delete("all")
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = AplicacionDibujo(root)
-    root.mainloop()
+    else:
+        print("Opción no válida. Intente de nuevo.\n")

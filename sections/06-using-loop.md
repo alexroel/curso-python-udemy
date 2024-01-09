@@ -363,14 +363,12 @@ while intentos_realizados < intentos_maximos:
         print(f"¡Felicidades! Adivinaste el número en {intentos_realizados} intentos.")
         break
     elif intento < numero_secreto:
-        intentos_maximos-=1
-        print(f"El número es mayor. \nte quedan {intentos_maximos} intentos:")
+        print(f"El número es mayor. \nTe quedan {intentos_maximos-intentos_realizados} intentos:")
     else:
-        intentos_maximos-=1
-        print(f"El número es menor. \nte quedan {intentos_maximos} intentos:")
+        print(f"El número es menor. \nTe quedan {intentos_maximos-intentos_realizados} intentos:")
 
 if intentos_realizados == intentos_maximos:
-    print(f"GAME OVERA")
+    print("GAME OVER")
 ```
 
 ---
