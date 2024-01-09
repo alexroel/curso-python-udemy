@@ -1,27 +1,44 @@
-# # Solicitar al usuario que ingrese una palabra
-# palabra = input("Ingrese una palabra: ")
+import tkinter as tk
 
-# # convertirla a minúsculas)
-# palabra = palabra.lower()
+class AplicacionDibujo:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Aplicación de Dibujo Simple")
 
-# #eliminar espacios
-# palabra = palabra.replace(" ", "")
+        # Configuración de la interfaz
+        self.canvas = tk.Canvas(root, bg="white", width=600, height=400)
+        self.canvas.pack(expand=tk.YES, fill=tk.BOTH)
 
-# # Invertir palabra
-# palabra_invertida = palabra == palabra[::-1]
+        # Configuración de los botones
+        self.clear_button = tk.Button(root, text="Limpiar", command=self.limpiar_dibujo)
+        self.clear_button.pack(side=tk.BOTTOM)
 
-# # Mostrar el resultado al usuario
-# if palabra == palabra_invertida:
-#     print(f"{palabra} es un palíndromo.")
-# else:
-#     print(f"{palabra} no es un palíndromo.")
+        # Configuración del pincel
+        self.color_pincel = "black"
+        self.tamanio_pincel = 2
 
+        # Configuración del dibujo
+        self.dibujando = False
+        self.canvas.bind("<B1-Motion>", self.dibujar)
+        self.canvas.bind("<Button-1>", self.iniciar_dibujo)
+        self.canvas.bind("<ButtonRelease-1>", self.detener_dibujo)
 
-# Solicita al usuario que ingrese una palabra
-palabra = input("Ingrese una palabra: ")
+    def dibujar(self, evento):
+        if self.dibujando:
+            x1, y1 = (evento.x - self.tamanio_pincel), (evento.y - self.tamanio_pincel)
+            x2, y2 = (evento.x + self.tamanio_pincel), (evento.y + self.tamanio_pincel)
+            self.canvas.create_oval(x1, y1, x2, y2, fill=self.color_pincel, outline=self.color_pincel, width=self.tamanio_pincel * 2)
 
-# Convierte la palabra a minúsculas y elimina espacios en blanco
-palabra = palabra.lower().replace(" ", "")
+    def iniciar_dibujo(self, evento):
+        self.dibujando = True
 
-# Muestra el resultado
-print("Es un palíndromo." if palabra == palabra[::-1] else "No es un palíndromo.")
+    def detener_dibujo(self, evento):
+        self.dibujando = False
+
+    def limpiar_dibujo(self):
+        self.canvas.delete("all")
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = AplicacionDibujo(root)
+    root.mainloop()
