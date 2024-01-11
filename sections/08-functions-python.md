@@ -1,14 +1,12 @@
-# Funciones y Modularidad
+# Funciones en Python
 
 1. [Introducción](#introducción)
 2. [Definición y uso de funciones](#definición-y-uso-de-funciones)
 3. [Alcance de variables (scope)](#alcance-de-variables-scope)
 4. [Argumentos indefinidos](#argumentos-indefinidos)
-5. [Función recursiva](#función-recursiva)
-6. [Anotaciones de tipos](#anotaciones-de-tipos)
-7. [Módulos y paquetes](#módulos-y-paquetes)
-8. [Proyecto de sección](#proyecto-de-sección)
-9. [Resumen](#resumen)
+5. [Anotaciones de tipos](#anotaciones-de-tipos)
+6. [Proyecto de sección](#proyecto-de-sección)
+7. [Resumen](#resumen)
 
 ---
 ## Introducción
@@ -163,35 +161,6 @@ En Python, puedes definir funciones que acepten un número indefinido de argumen
 Estas técnicas te permiten crear funciones más flexibles y versátiles que pueden adaptarse a diferentes situaciones donde no conoces de antemano la cantidad exacta de argumentos que se pasarán. Es importante recordar que los argumentos posicionales deben preceder a los argumentos de palabra clave al llamar a la función.
 
 ---
-## Función recursiva
-Una función recursiva es una función que se llama a sí misma dentro de su propio cuerpo para resolver un problema. La recursión es una técnica poderosa en programación y se utiliza para dividir un problema en subproblemas más pequeños y manejables.
-
-Aquí hay un ejemplo sencillo de una función recursiva en Python que calcula el factorial de un número:
-
-```python
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-# Ejemplo de uso
-resultado = factorial(5)
-print("El factorial de 5 es:", resultado)  # Imprime: El factorial de 5 es: 120
-```
-
-En este ejemplo, la función `factorial` se llama a sí misma con un argumento menor (`n - 1`) en cada llamada hasta que alcanza el caso base (cuando `n` es 0 o 1), en cuyo caso devuelve 1. Luego, la función se desenrolla y calcula el resultado multiplicando `n` por el resultado de la llamada recursiva.
-
-Es importante tener un caso base que detenga la recursión para evitar un bucle infinito. Cada llamada recursiva debe acercarse al caso base en algún momento.
-
-Algunas cosas a considerar al trabajar con funciones recursivas:
-- Asegúrate de tener un caso base que detenga la recursión.
-- Verifica que el problema se divida en subproblemas más pequeños en cada llamada recursiva.
-- La recursión puede tener un costo en términos de uso de memoria y tiempo de ejecución, especialmente para problemas grandes. Puedes optimizar la recursión en algunos casos.
-
-Espero que este ejemplo te ayude a entender cómo se utiliza la recursión en Python. Si tienes alguna pregunta adicional o necesitas más clarificaciones, no dudes en preguntar.
-
----
 ## Anotaciones de tipos
 Las "anotaciones de tipos" en Python se refieren a la capacidad de especificar el tipo de datos que se espera que una función o variable contenga. Estas anotaciones no afectan el comportamiento del código en tiempo de ejecución, pero pueden ser útiles para proporcionar información a otros desarrolladores y herramientas que analizan el código.
 
@@ -262,57 +231,6 @@ print("El factorial de 5 es:", resultado)  # Imprime: El factorial de 5 es: 120
 ```
 
 En este caso, se ha anotado `n` con el tipo `int` para indicar que es un entero y se ha anotado el tipo de retorno de la función con `-> int` para indicar que la función devuelve un entero. Estas anotaciones proporcionan información sobre los tipos esperados y ayudan a los desarrolladores a comprender mejor cómo se debe usar la función.
-
----
-## Módulos y paquetes
-En Python, los módulos y paquetes son formas de organizar y reutilizar código. Permiten dividir un programa en componentes más pequeños, lo que facilita la gestión, la reutilización y la colaboración en proyectos de gran escala.
-
-### Módulos:
-
-Un módulo en Python es un archivo que contiene definiciones y declaraciones de Python, como funciones, variables y clases. Puedes acceder a estas definiciones desde otro archivo utilizando la palabra clave `import`. Algunos módulos son parte de la biblioteca estándar de Python, mientras que otros pueden ser creados por los propios programadores.
-
-Ejemplo de un módulo simple llamado `mimodulo.py`:
-
-```python
-# mimodulo.py
-def saludar(nombre):
-    print(f"Hola, {nombre}!")
-
-PI = 3.14159265359
-```
-
-Para utilizar este módulo en otro archivo, puedes hacer lo siguiente:
-
-```python
-import mimodulo
-
-mimodulo.saludar("Alice")  # Imprime: Hola, Alice!
-print(mimodulo.PI)  # Imprime: 3.14159265359
-```
-
-### Paquetes:
-
-Un paquete en Python es un directorio que contiene uno o más módulos. Para crear un paquete, simplemente crea un directorio y coloca dentro los módulos que deseas incluir. Para que Python reconozca el directorio como un paquete, debe contener un archivo especial llamado `__init__.py`.
-
-Ejemplo de una estructura de paquete:
-
-```
-mi_paquete/
-    __init__.py
-    modulo1.py
-    modulo2.py
-```
-
-Donde `__init__.py` puede estar vacío o contener código de inicialización para el paquete.
-
-Para importar módulos de un paquete, puedes hacer lo siguiente:
-
-```python
-from mi_paquete import modulo1, modulo2
-
-modulo1.funcion1()
-modulo2.funcion2()
-```
 
 ---
 ## Proyecto de sección
