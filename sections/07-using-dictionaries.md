@@ -2,9 +2,10 @@
 
 1. [Introducción](#introducción)
 2. [Creación y acceso a diccionarios](#creación-y-acceso-a-diccionarios)
-3. [Iteración sobre Diccionarios](#iteración-sobre-diccionarios)
-4. [Proyecto de sección](#proyecto-de-sección)
-5. [Resumen](#resumen)
+3. [Operaciones Básicas](#operaciones-básicas)
+4. [Iteración sobre Diccionarios](#iteración-sobre-diccionarios)
+5. [Proyecto de sección](#proyecto-de-sección)
+6. [Resumen](#resumen)
 
 
 ---

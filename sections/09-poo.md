@@ -1,11 +1,11 @@
-# Programación Orientada a Objetos (POO)
+# Programación Orientada a Objetos en Python
 
 1. [Introducción](#introducción)
 2. [Clases y objetos en Python](#clases-y-objetos-en-python)
 3. [Métodos y atributos de clase](#métodos-y-atributos-de-clase)
 4. [Herencia y polimorfismo](#herencia-y-polimorfismo)
 5. [Encapsulación y abstracción](#encapsulación-y-abstracción)
-6. [Proyecto de sección](#proyecto-de-sección)
+6. [Proyecto de sección: Lista de tareas](#proyecto-de-sección-lista-de-tareas)
 7. [Resumen](#resumen)
 
 ---
@@ -269,8 +269,135 @@ Por ejemplo, en un sistema de gestión de biblioteca, puedes crear una clase "Li
 La abstracción también implica la creación de interfaces y métodos que ocultan los detalles de implementación, permitiendo a los usuarios de una clase centrarse en cómo usarla sin necesidad de conocer cómo se realiza el trabajo interno. Esto facilita la modularidad y el mantenimiento del código.
 
 ---
-## Proyecto de sección 
+## Proyecto de sección: Lista de tareas
+
+**Objetivo:**
+Desarrollar un sistema de gestión de tareas básico en Python que permita a los usuarios agregar tareas, mostrar la lista de tareas y marcar tareas como realizadas.
+
+**Descripción del proyecto:**
+Crear un sistema de gestión de tareas con las siguientes características:
+
+1. **Clase Task:**
+   - Representa una tarea con atributos como descripción y estado (por defecto, "Pendiente").
+   - Proporciona un método de inicialización para crear instancias de tareas.
+
+2. **Clase TaskManager:**
+   - Gestiona una lista de tareas.
+   - Proporciona métodos para agregar tareas, mostrar la lista de tareas y marcar tareas como realizadas.
+
+3. **Interfaz de Usuario (main.py):**
+   - Permite a los usuarios interactuar con el sistema mediante un menú de opciones.
+   - Opciones del menú:
+     - Agregar Tarea: Permite al usuario ingresar la descripción de una nueva tarea y la agrega a la lista.
+     - Mostrar Tareas: Muestra la lista de tareas con sus descripciones y estados.
+     - Marcar como Realizada: Muestra la lista de tareas y permite al usuario marcar una tarea como realizada seleccionando su número.
+     - Salir: Finaliza el programa.
+
+4. **Funcionalidades adicionales:**
+   - Validación de entrada: Verificar la validez de la entrada del usuario para evitar errores.
+   - Mensajes informativos: Proporcionar mensajes claros y descriptivos para informar al usuario sobre las acciones realizadas.
+
+**Observaciones:**
+- Asegurarse de que los nombres de los métodos y las variables estén en español para mantener coherencia con el código existente.
+- Se ha corregido el nombre de los métodos en el código principal para que coincidan con los nombres de los métodos en el módulo `task_manager`.
+- Se ha proporcionado un mensaje de despedida al salir del programa para mejorar la experiencia del usuario.
+
+**`task_manager.py`**
+```python
+# Modelo de una tarea 
+class Task:
+    def __init__(self, description, status="Pendiente") -> None:
+        self.description = description
+        self.status = status
+
+# lista de tarea 
+class TaskManager:
+    def __init__(self) -> None:
+        self.tasks = []
+
+    def add_task(self, task):
+        self.tasks.append(task)
+    
+    def show_tasks(self):
+        if not self.tasks:
+            print("No hay tareas en la lista")
+        else:
+            for index, task in enumerate(self.tasks, start=1):
+                print(f"{index}. Descripción: {task.description}, Estado: {task.status}.")
+    
+    def mark_as_done(self, index):
+        if 1 <= index <= len(self.tasks):
+            self.tasks[index-1].status = "Realizada"
+            print(f"Tarea {index} marcada como realizada.")
+        else:
+            print("Indece de tarea no valido.")
+```
+
+
+**`main.py`**
+```python
+from task_manager import Task, TaskManager
+
+def main():
+    task_list = TaskManager()
+
+    while True:
+        print("\n--- Lista de Tareas ---")
+        print("1. Agregar Tarea")
+        print("2. Mostrar Tareas")
+        print("3. Marcar como Realizada")
+        print("4. Salir")
+
+        option = input("Seleccione una opción: ")
+
+        if option == "1":
+            description = input("Ingrese la descripción de la tarea: ")
+            new_task = Task(description)
+            task_list.agregar_tarea(new_task)
+            print("Tarea agregada correctamente.")
+
+        elif option == "2":
+            task_list.mostrar_tareas()
+
+        elif option == "3":
+            task_list.mostrar_tareas()
+            index = int(input("Ingrese el número de la tarea a marcar como realizada: "))
+            task_list.marcar_como_realizada(index)
+
+        elif option == "4":
+            print("¡Adiós!")
+            break
+
+        else:
+            print("Opción no válida. Inténtelo de nuevo.")
+
+if __name__ == "__main__":
+    main()
+
+```
 
 ---
 ## Resumen
+En la sección dedicada a la "Programación Orientada a Objetos en Python", exploramos varios conceptos clave que son fundamentales para entender cómo estructurar y organizar el código en este paradigma. A continuación, se presenta un resumen de los temas tratados:
 
+1. **Clases y objetos en Python:**
+   - Introducción a la creación de clases como estructuras fundamentales para la programación orientada a objetos.
+   - Exploración de la instancia de clases, conocida como objetos, y cómo se crean y manipulan en Python.
+
+2. **Métodos y atributos de clase:**
+   - Análisis detallado de los métodos, funciones definidas dentro de una clase, y cómo interactúan con los objetos.
+   - Exploración de los atributos de clase para almacenar información específica de la instancia.
+
+3. **Herencia y polimorfismo:**
+   - Estudio de la herencia como un mecanismo para crear nuevas clases basadas en clases existentes, facilitando la reutilización de código.
+   - Introducción al polimorfismo, que permite a objetos de diferentes clases ser tratados de manera uniforme.
+
+4. **Encapsulación y abstracción:**
+   - Discusión sobre la encapsulación para limitar el acceso a ciertos atributos y métodos, protegiendo así la integridad del objeto.
+   - Exploración de la abstracción para simplificar la representación de objetos y centrarse en las características esenciales.
+
+5. **Proyecto de sección: Lista de tareas:**
+   - Desarrollo práctico de un proyecto aplicado que integra los conceptos aprendidos.
+   - Creación de una lista de tareas utilizando la programación orientada a objetos para modelar tareas, prioridades y estados.
+
+Esta sección proporcionó a los participantes las herramientas necesarias para comprender y aplicar eficazmente la programación orientada a objetos en Python, fomentando la creación de código modular, reutilizable y fácil de mantener.
