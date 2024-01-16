@@ -1,39 +1,27 @@
-from task_manager import Task, TaskManager
+ruta_archivo = "texto.txt"
 
-def main():
-    task_list = TaskManager()
 
-    while True:
-        print("\n--- Lista de Tareas ---")
-        print("1. Agregar Tarea")
-        print("2. Mostrar Tareas")
-        print("3. Marcar como Realizada")
-        print("4. Salir")
+# Abrir un archivo en modo de escritura
+with open(ruta_archivo, 'w') as archivo:
+    archivo.write('Hola, este es un nuevo archivo.\n')
+    archivo.write('¡Aprender Python es divertido!')
 
-        option = input("Seleccione una opción: ")
+try:
+    with open(ruta_archivo, 'r') as archivo:
+        # contenido = archivo.read()
+        # print(contenido)
+        lineas = archivo.readlines()
+        print(lineas)
+        for linea in lineas:
+            print(linea)
 
-        if option == "1":
-            description = input("Ingrese la descripción de la tarea: ")
-            new_task = Task(description)
-            task_list.agregar_tarea(new_task)
-            print("Tarea agregada correctamente.")
+    
 
-        elif option == "2":
-            task_list.mostrar_tareas()
+except FileNotFoundError:
+    print("El archivo no existe")
 
-        elif option == "3":
-            task_list.mostrar_tareas()
-            index = int(input("Ingrese el número de la tarea a marcar como realizada: "))
-            task_list.marcar_como_realizada(index)
+except Exception as e:
+    print(f"Se produjo un error: {e}")
 
-        elif option == "4":
-            print("¡Adiós!")
-            break
-
-        else:
-            print("Opción no válida. Inténtelo de nuevo.")
-
-if __name__ == "__main__":
-    main()
 
 

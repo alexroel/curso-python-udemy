@@ -353,16 +353,16 @@ def main():
         if option == "1":
             description = input("Ingrese la descripción de la tarea: ")
             new_task = Task(description)
-            task_list.agregar_tarea(new_task)
+            task_list.add_task(new_task)
             print("Tarea agregada correctamente.")
 
         elif option == "2":
-            task_list.mostrar_tareas()
+            task_list.show_tasks()
 
         elif option == "3":
-            task_list.mostrar_tareas()
+            task_list.show_tasks()
             index = int(input("Ingrese el número de la tarea a marcar como realizada: "))
-            task_list.marcar_como_realizada(index)
+            task_list.mark_as_done(index)
 
         elif option == "4":
             print("¡Adiós!")
