@@ -1,9 +1,9 @@
 # Variables y datos
 
 1. [Introducción](#introducción)
-2. [Variables](#variables)
-3. [Tipos de datos](#tipos-de-datos)
-4. [Salida de datos](#salida-de-datos)
+2. [Sintaxis y semántica de Python]()
+3. [Variables](#variables)
+4. [Tipos de datos](#tipos-de-datos)
 5. [Entrada de datos](#entrada-de-datos)
 6. [Conversión de tipos](#conversión-de-tipos)
 7. [Proyecto de sección](#proyectos-de-sección)
@@ -21,6 +21,45 @@ La conversión de tipos es otro tema fundamental que abordaremos, ya que nos per
 Así que prepárense para sumergirse en el fascinante mundo de las variables y datos en Python. ¡Estamos emocionados de acompañarlos en este viaje de aprendizaje!
 
 ---
+## Sintaxis y semántica de Python
+La sintaxis y la semántica son dos aspectos clave en cualquier lenguaje de programación, incluido Python. Aquí tienes una explicación con ejemplos específicos del código que proporcionaste:
+
+### Sintaxis:
+
+La sintaxis se refiere a las reglas y estructuras que rigen la construcción de programas en un lenguaje de programación específico. En Python, la sintaxis es legible y utiliza la indentación para delimitar bloques de código.
+
+#### Ejemplo:
+
+```python
+print("Hola Mundo")
+print(45)
+```
+
+En este código:
+
+- La función `print()` se utiliza para imprimir valores en la consola.
+- Los paréntesis `()` son necesarios para indicar que `print` es una función.
+- Las cadenas de texto están envueltas entre comillas dobles (`"`) y los números no necesitan comillas.
+
+### Semántica:
+
+La semántica se refiere al significado de las construcciones en un lenguaje de programación. Es decir, cómo se interpretan y ejecutan las instrucciones. La semántica de Python es bastante sencilla y orientada a objetos.
+
+#### Ejemplo:
+
+```python
+print("Hola Mundo")  # Imprime la cadena de texto "Hola Mundo"
+print(45)            # Imprime el número 45
+```
+
+- La primera línea imprime la cadena de texto "Hola Mundo" en la consola.
+- La segunda línea imprime el número 45 en la consola.
+
+Ambas líneas son instrucciones independientes y se ejecutan secuencialmente. La semántica de Python asegura que la función `print` muestre el valor proporcionado como argumento en la consola.
+
+En resumen, la sintaxis de Python te permite escribir código de manera estructurada, y la semántica garantiza que el código tenga un significado y un comportamiento específicos. En este caso, el código simplemente imprime un saludo y un número en la consola.
+
+---
 ## Variables
 En programación, una variable es un espacio de memoria reservado para almacenar datos, como números, cadenas de texto, objetos u otro tipo de información. Las variables permiten que los programas almacenen y manipulen datos de manera dinámica en tiempo de ejecución.
 
@@ -34,21 +73,69 @@ nombre_variable = valor
 - `=`: Es el operador de asignación que se utiliza para asignar un valor a la variable.
 - `valor`: Es el dato que deseas almacenar en la variable.
 
-**Reglas de nomenclatura para variables en Python:**
+**Ejemplos de definición de variables**
+Definción y inicialización de variable:
+```python
+mensaje = "Hola Mundo"
+print(mensaje)
+```
+El valor asignado a una variable puede cambiar a lo largo del programa.
+```python
+mensaje = "Adios Mundo"
+print(mensaje)
+```
+
+**Sintaxis de las variables en Python**
 
 1. Los nombres de las variables deben comenzar con una letra (a-z, A-Z) o un guión bajo (_).
 2. Después del primer carácter, los nombres de las variables pueden contener letras, números y guiones bajos.
+  ```python
+  _mensaje = "Hola mundo"
+  print(_mensaje)
+  ```
+  ```python
+  menSaje = "Hola mundo"
+  print(menSaje)
+  ```
+  ```python
+  mensaje_2 = "Hola Python"
+  print(mensaje_2)
+  ``` 
+  Si no cumple con estas reglas definidas en la sintaxis de Python, el interprete lanza un error a la hora de ejecutar.
+
+  ```python
+  mensaje& = "Hola Python"
+  print(mensaje_2)
+  ``` 
+  ```python
+    File "<stdin>", line 1
+    mensaje& = "Hola Python"
+             ^
+    SyntaxError: invalid syntax
+  ``` 
+
+  ```python
+  2mensaje = "Hola Python"
+  print(mensaje_2)
+  ``` 
+  ```python
+    File "<stdin>", line 1
+    2mensaje = "Hola Python"
+    ^
+    SyntaxError: invalid decimal literal
+  ```
 3. Los nombres de las variables distinguen entre mayúsculas y minúsculas. Esto significa que `mi_variable` y `Mi_Variable` son considerados nombres diferentes.
+  ```python
+  Mensaje3 = "Hola Python"
+  print(mensaje3)
+  ``` 
+  ```python
+  Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  NameError: name 'mensaje3' is not defined. Did you mean: 'Mensaje3'?
+  ```
 4. No se pueden utilizar palabras clave reservadas de Python como nombres de variables. Ejemplos de palabras clave son `if`, `else`, `while`, `for`, `def`, etc.
 5. Es buena práctica utilizar nombres descriptivos para tus variables para que el código sea más legible.
-
-Ejemplos de nombres de variables válidos:
-```python
-edad = 25
-nombre_completo = "Juan Pérez"
-saldo_cuenta = 1000.50
-total_productos = 10
-```
 
 Recuerda que la elección de nombres de variables debe ser significativa y seguir convenciones de estilo para hacer tu código más legible y mantenible. Por ejemplo, PEP 8 es la guía de estilo de código recomendada para Python y ofrece pautas sobre cómo nombrar variables y otras convenciones de codificación.
 
@@ -93,94 +180,13 @@ A continuación, algunos ejemplos adicionales:
 Estos ejemplos ilustran cómo Python es dinámicamente tipado, lo que significa que el tipo de una variable puede cambiar durante la ejecución del programa. Sin embargo, es importante comprender y gestionar los tipos de datos para evitar errores y mejorar la legibilidad del código.
 
 ---
-## Salida de datos
-
-1. **Función `print()`**: La función `print()` se utiliza para mostrar información en la consola.
-
-```python
-print("Hola, mundo!")
-```
-
-2. **Formateo de cadenas**: Puedes utilizar f-strings (format strings) o el método `format()` para insertar valores en cadenas de texto formateadas.
-
-```python
-nombre = "Juan"
-edad = 30
-print(f"Mi nombre es {nombre} y tengo {edad} años.")
-```
-
-```python
-nombre = "María"
-edad = 25
-print("Mi nombre es {} y tengo {} años.".format(nombre, edad))
-```
-
-### Caracteres especiales
-En Python y muchos otros lenguajes de programación, los caracteres especiales son secuencias de caracteres que representan caracteres no imprimibles o que tienen un significado especial en una cadena de texto. Aquí tienes una lista de algunos caracteres especiales comunes en Python:
-
-1. **`\n`**: Representa un salto de línea. Se utiliza para crear una nueva línea en una cadena de texto o en la salida de datos.
-
-```python
-print("Línea 1\nLínea 2")
-```
-
-Esto producirá la siguiente salida:
-
-```
-Línea 1
-Línea 2
-```
-
-2. **`\t`**: Representa un tabulador. Se utiliza para insertar un espacio en blanco equivalente a un tabulador en una cadena de texto.
-
-```python
-print("Columna1\tColumna2")
-```
-
-Esto producirá la siguiente salida:
-
-```
-Columna1    Columna2
-```
-
-3. **`\\`**: Representa una barra invertida literal. Si deseas incluir una barra invertida en una cadena sin que se interprete como un carácter de escape, debes usar `\\`.
-
-```python
-print("C:\\Directorio\\Archivo")
-```
-
-Esto producirá la siguiente salida:
-
-```
-C:\Directorio\Archivo
-```
-
-4. **`\"` y `\'`**: Representan comillas dobles y comillas simples dentro de una cadena del mismo tipo.
-
-```python
-print("Esto es una cadena con comillas \"dobles\"")
-print('Esto es una cadena con comillas simples \'simples\'')
-```
-
-Esto producirá la siguiente salida:
-
-```
-Esto es una cadena con comillas "dobles"
-Esto es una cadena con comillas simples 'simples'
-```
-
-5. **`\r`**: Representa un retorno de carro. A menudo se usa junto con `\n` para manejar saltos de línea en sistemas que utilizan retornos de carro y avance de línea (por ejemplo, en archivos de texto).
-
-Estos son algunos ejemplos de caracteres especiales comunes en Python, pero hay otros caracteres de escape que puedes usar para diversos fines. Puedes combinar estos caracteres especiales según tus necesidades para formatear cadenas de texto o manipular la salida de datos de la manera deseada.
-
----
 ## Entrada de datos
 
 1. **Función `input()`**: La función `input()` permite al usuario introducir datos desde la consola. Ten en cuenta que los datos introducidos se almacenan como cadenas.
 
 ```python
 nombre = input("Por favor, ingresa tu nombre: ")
-print(f"Hola, {nombre}!")
+print("Hola,", nombre)
 ```
 
 
@@ -279,6 +285,16 @@ precio_venta = valor_venta + igv
 print(f"El IGV es: {igv:.2f}")
 print(f"El precio de venta final es: {precio_venta:.2f}")
 ```
+El formato `:.2f` es una especificación de formato utilizada en Python para formatear números de punto flotante (números decimales). Vamos a desglosar cada parte:
+
+- `:`: Este es el delimitador que indica que se va a especificar un formato.
+
+- `.2`: El número después del punto (`.`) indica la cantidad de dígitos que se mostrarán después del punto decimal. En este caso, `.2` significa que se mostrarán exactamente 2 dígitos después del punto.
+
+- `f`: Indica que el tipo de dato que se formateará es un número de punto flotante (float).
+
+Entonces, cuando utilizas `:.2f` en una cadena de formato, estás diciendo que deseas formatear un número de punto flotante y que se deben mostrar exactamente dos dígitos después del punto decimal.
+
 
 Con este código, el programa solicita al usuario ingresar el valor de venta del producto, luego calcula el IGV como el 18% del valor de venta y finalmente calcula el precio de venta final sumando el valor de venta y el IGV. Los resultados se muestran con dos decimales para mayor claridad.
 

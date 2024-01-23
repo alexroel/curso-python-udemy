@@ -177,7 +177,7 @@ Durante la instalación, podrás personalizar algunas opciones según tus prefer
 
 Haz clic en "Next" y luego en "Finish" para completar la instalación. Visual Studio Code estará listo para su uso.
 
-### Extensiones: Python, Tokyo Night, Material Icon Theme
+### Extensiones: Python, Tokyo Night, Symbols
 
 Una de las características poderosas de Visual Studio Code es su capacidad para admitir extensiones que personalizan y amplían sus funciones. Aquí te recomendamos algunas extensiones que mejorarán tu experiencia de desarrollo.
 

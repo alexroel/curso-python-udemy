@@ -122,6 +122,8 @@ length = len(text) # 6
   substring = text[1:4]  # Obtiene los caracteres desde el índice 1 hasta el índice 3 ("yth")
   ```
 
+### Stride
+
 ### Inmutabilidad:
 
 La inmutabilidad de las cadenas significa que no puedes cambiar directamente un carácter en una posición específica de la cadena después de que se ha creado. Sin embargo, puedes crear nuevas cadenas basadas en la cadena original.
