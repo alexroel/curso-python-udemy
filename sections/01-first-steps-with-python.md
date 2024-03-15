@@ -3,29 +3,30 @@
 1. [Introducción](#introducción)
 2. [¿Qué es Python?](#¿qué-es-python?)
 3. [Instalación de Python](#instalación-de-python)
-4. [Instalar Visual Studio Code](#instalación-de-visual-studio-code)
-5. [Consola interactiva de Python](#consola-interactiva-de-python)
+4. [Consola interactiva de Python](#consola-interactiva-de-python)
+5. [Instalar Visual Studio Code](#instalación-de-visual-studio-code)
 6. [Creación de la primera aplicación](#creación-de-la-primera-aplicación)
-7. [Resumen](#resumen)
+7. [Sintaxis y semántica de Python](#sintaxis-y-semántica-de-python)
+8. [Resumen](#resumen)
 
 ---
 ## Introducción
 
 Bienvenido a la sección "Primeros pasos con Python". En esta etapa, exploraremos los fundamentos esenciales para iniciarte en el fascinante mundo de la programación con Python. Este lenguaje se ha destacado como uno de los más populares y de mayor crecimiento en el ámbito mundial. Su versatilidad lo ha convertido en una herramienta fundamental para diversas tareas, desde el desarrollo web hasta el análisis de datos, e incluso en el campo del aprendizaje automático.
 
-### Razones para Aprender Python
+**Razones para Aprender Python**
 
 La creciente demanda de desarrolladores de Python y las oportunidades lucrativas en trabajos de programación son solo algunas de las razones que hacen que aprender Python sea una elección inteligente. Este módulo te proporcionará una introducción práctica al uso de Python para la creación de aplicaciones, sirviendo como un sólido punto de partida para tu camino hacia la programación en Python.
 
-### Objetivos de Aprendizaje
+**Objetivos de Aprendizaje**
 
 En esta sección, nos enfocaremos en:
 
 - **¿Qué es Python?** Explora las características clave que hacen a Python único y poderoso.
 - **Instalación de Python:** Aprende a instalar Python en tu sistema para comenzar a programar rápidamente.
+- **Consola interactiva de Python:** Explora un espacio interactivo para experimentar y probar tu código.
 - **Instalar Visual Studio Code:** Descubre cómo configurar este entorno de desarrollo popular y versátil.
 - **Creación de la primera aplicación:** Guía paso a paso para crear tu primera aplicación en Python, estableciendo una base sólida.
-- **Consola interactiva de Python:** Explora un espacio interactivo para experimentar y probar tu código.
 
 Estamos emocionados de acompañarte en este viaje de descubrimiento y aprendizaje. ¡Vamos a sumergirnos en el mundo de Python y comenzar a construir juntos!
 
@@ -39,7 +40,7 @@ Python se caracteriza por una sintaxis sencilla y fácil de aprender, enfatizand
 
 Finalmente, Python cuenta con el respaldo de una comunidad activa de usuarios dispuestos a ayudar a los programadores nuevos, guiándolos no solo hacia la sintaxis correcta, sino también hacia el uso efectivo del lenguaje para alcanzar sus objetivos.
 
-### Diferencia entre Compilado e Interpretado
+**Diferencia entre Compilado e Interpretado**
 
 Antes de explorar la ejecución de código en Python, es crucial comprender la diferencia entre lenguajes compilados e interpretados:
 
@@ -47,7 +48,7 @@ Antes de explorar la ejecución de código en Python, es crucial comprender la d
 
 - **Lenguajes Interpretados:** En cambio, los lenguajes interpretados no se traducen completamente antes de la ejecución. El intérprete procesa el código línea por línea durante la ejecución del programa. Esto significa que no hay un paso de compilación previo a la ejecución del código fuente. Python es un ejemplo de lenguaje interpretado.
 
-### Ejecución de código en Python
+**Ejecución de código en Python**
 
 Python es un lenguaje interpretado, lo que reduce el ciclo de editar-probar-depurar ya que no requiere un paso de compilación. Para ejecutar aplicaciones de Python, solo se necesita un entorno o intérprete de runtime para ejecutar el código.
 
@@ -71,7 +72,7 @@ print("¡Hola Mundo!")
 **Nota:**
 La mayoría de las implementaciones de Python compilan scripts parcialmente, convirtiendo el código fuente en código byte que se puede ejecutar en cualquier plataforma compatible. Esta compilación parcial se realiza automáticamente para mejorar el rendimiento de ejecuciones posteriores del script. También es posible generar una versión "compilada" del script para distribuir una aplicación sin proporcionar el código fuente completo.
 
-### Implementaciones de Python
+**Implementaciones de Python**
 
 Python se distribuye bajo la licencia de código abierto OSI (Esta licencia garantiza que cualquier persona pueda utilizar, modificar y distribuir Python libremente), y existen varias implementaciones disponibles según las necesidades. Algunas opciones incluyen:
 
@@ -92,7 +93,7 @@ Antes de sumergirse en el emocionante mundo de la programación con Python, es f
 
 Es posible que Python 3 ya esté presente en su sistema, ya sea por instalación previa o como parte de alguna aplicación. Para verificarlo, siga las instrucciones según su sistema operativo.
 
-### En Windows:
+**En Windows:**
 
 1. Abra la aplicación del símbolo del sistema seleccionando "Inicio" en la barra de tareas y buscando "cmd" en el cuadro de búsqueda. Seleccione la aplicación "Símbolo del sistema" en los resultados.
 
@@ -112,27 +113,27 @@ Es posible que Python 3 ya esté presente en su sistema, ya sea por instalación
 
     - Si el primer número es 3, incluso si no tiene la versión más reciente, puede proceder con confianza. Si es 2 o recibe un mensaje de error, es necesario instalar Python 3.
 
-### Instalar Python
+**Instalar Python**
 
 Ahora, si determina que Python 3 no está instalado en su sistema o si necesita actualizarlo, siga estos pasos sencillos para instalar Python.
 
-#### Paso 1: Descargar Python
+**Paso 1: Descargar Python**
 
 Visite el [sitio oficial de Python](https://www.python.org/downloads/) y seleccione la versión más reciente de Python 3.x (donde x es la última subversión).
 
-#### Paso 2: Iniciar el Instalador
+**Paso 2: Iniciar el Instalador**
 
 Ejecute el archivo descargado para iniciar el instalador. Asegúrese de marcar la opción "Add Python X.X to PATH" durante el proceso de instalación, lo que facilitará la ejecución de Python desde la línea de comandos.
 
-#### Paso 3: Configurar la Instalación
+**Paso 3: Configurar la Instalación**
 
 Seleccione las opciones de instalación según sus preferencias. Puede dejar las configuraciones predeterminadas en su mayoría, pero asegúrese de habilitar la opción "Add Python to PATH".
 
-#### Paso 4: Completar la Instalación
+**Paso 4: Completar la Instalación**
 
 Haga clic en "Install Now" y espere a que el instalador complete el proceso. Una vez finalizado, puede cerrar el instalador.
 
-#### Paso 5: Verificar la Instalación
+**Paso 5: Verificar la Instalación**
 
 Abra una nueva ventana del símbolo del sistema y escriba:
 
@@ -149,51 +150,6 @@ py --version
 Si ve la versión de Python, ¡felicidades! Ha instalado Python con éxito.
 
 Con estos simples pasos, ahora está listo para sumergirse en el emocionante viaje de la programación con Python. ¡A programar!
-
----
-## Instalar Visual Studio Code
-
-### Herramientas para Escribir Código de Python
-
-Antes de sumergirnos en el proceso de instalación de Visual Studio Code, es esencial comprender las herramientas necesarias para escribir código en Python. Un entorno de desarrollo integrado (IDE) como Visual Studio Code proporciona un conjunto de características que mejoran la productividad y hacen que la escritura de código sea más eficiente.
-
-### Instalación de Visual Studio Code
-
-Visual Studio Code es una herramienta gratuita y de código abierto que puede instalarse en diferentes sistemas operativos. A continuación, te guiamos a través del proceso de instalación paso a paso.
-
-#### Paso 1: Descargar Visual Studio Code
-
-Visita el [sitio oficial de Visual Studio Code](https://code.visualstudio.com/) y haz clic en el botón "Download" para obtener el instalador adecuado para tu sistema operativo.
-
-#### Paso 2: Ejecutar el Instalador
-
-Una vez completada la descarga, ejecuta el archivo descargado para iniciar el instalador. Sigue las instrucciones del asistente de instalación.
-
-#### Paso 3: Configurar Opciones de Instalación
-
-Durante la instalación, podrás personalizar algunas opciones según tus preferencias. Asegúrate de marcar la opción "Add to PATH" para facilitar el acceso desde la línea de comandos.
-
-#### Paso 4: Instalación Completa
-
-Haz clic en "Next" y luego en "Finish" para completar la instalación. Visual Studio Code estará listo para su uso.
-
-### Extensiones: Python, Tokyo Night, Symbols
-
-Una de las características poderosas de Visual Studio Code es su capacidad para admitir extensiones que personalizan y amplían sus funciones. Aquí te recomendamos algunas extensiones que mejorarán tu experiencia de desarrollo.
-
-#### 1. Python
-
-Para habilitar el soporte completo de Python en Visual Studio Code, instala la extensión oficial de Python. Abre Visual Studio Code, ve a la pestaña de Extensiones (puedes usar el atajo `Ctrl+Shift+X`), busca "Python" y selecciona la extensión proporcionada por Microsoft.
-
-#### 2. Tokyo Night
-
-Tokyo Night es un tema de color que agrega un toque estético a tu entorno de desarrollo. Instala esta extensión para cambiar la apariencia de Visual Studio Code. Ve a la pestaña de Extensiones, busca "Tokyo Night" y selecciona la extensión del tema.
-
-#### 3. Fluent Icons y Symbols
-
-Esta extensión agrega iconos a los archivos y carpetas en el explorador de Visual Studio Code, facilitando la identificación rápida de diferentes tipos de archivos. Instala la extensiones "Fluent Icons y Symbols" para mejorar la visualización de tu proyecto.
-
-Con Visual Studio Code instalado y configurado con estas extensiones, disfrutarás de un entorno de desarrollo personalizado y altamente funcional. El soporte total para Python y las mejoras visuales proporcionadas por los temas y los iconos mejorarán significativamente tu experiencia de codificación. ¡Ahora estás listo para escribir código de Python con estilo y eficiencia!
 
 ---
 ## Consola interactiva de Python
@@ -263,6 +219,45 @@ Estos operadores aritméticos siguen las reglas matemáticas estándar. Algunas 
 Recuerda que puedes salir de la consola interactiva escribiendo `exit()` o presionando `Ctrl + Z` seguido de `Enter` (en sistemas UNIX). La consola interactiva es una herramienta poderosa para aprender y experimentar con Python de manera rápida y sencilla.
 
 ---
+## Instalar Visual Studio Code
+
+**Herramientas para Escribir Código de Python**
+
+Antes de sumergirnos en el proceso de instalación de Visual Studio Code, es esencial comprender las herramientas necesarias para escribir código en Python. Un entorno de desarrollo integrado (IDE) como Visual Studio Code proporciona un conjunto de características que mejoran la productividad y hacen que la escritura de código sea más eficiente.
+
+**Instalación de Visual Studio Code**
+
+Visual Studio Code es una herramienta gratuita y de código abierto que puede instalarse en diferentes sistemas operativos. A continuación, te guiamos a través del proceso de instalación paso a paso.
+
+**Paso 1: Descargar Visual Studio Code**
+
+Visita el [sitio oficial de Visual Studio Code](https://code.visualstudio.com/) y haz clic en el botón "Download" para obtener el instalador adecuado para tu sistema operativo.
+
+**Paso 2: Ejecutar el Instalador**
+
+Una vez completada la descarga, ejecuta el archivo descargado para iniciar el instalador. Sigue las instrucciones del asistente de instalación.
+
+**Paso 3: Configurar Opciones de Instalación**
+
+Durante la instalación, podrás personalizar algunas opciones según tus preferencias. Asegúrate de marcar la opción "Add to PATH" para facilitar el acceso desde la línea de comandos.
+
+**Paso 4: Instalación Completa**
+
+Haz clic en "Next" y luego en "Finish" para completar la instalación. Visual Studio Code estará listo para su uso.
+
+**Extensiones: Python, Tokyo Night, Symbols**
+
+Una de las características poderosas de Visual Studio Code es su capacidad para admitir extensiones que personalizan y amplían sus funciones. Aquí te recomendamos algunas extensiones que mejorarán tu experiencia de desarrollo.
+
+**1. Python:** Para habilitar el soporte completo de Python en Visual Studio Code
+**2. Atom One Dark Theme:** Atom One Dark Theme es un tema de color que agrega un toque estético a tu entorno de desarrollo.
+**3. Fluent Icons y Symbols:** Esta extensión agrega iconos a los archivos y carpetas en el explorador de Visual Studio Code
+
+Con Visual Studio Code instalado y configurado con estas extensiones, disfrutarás de un entorno de desarrollo personalizado y altamente funcional. El soporte total para Python y las mejoras visuales proporcionadas por los temas y los iconos mejorarán significativamente tu experiencia de codificación. ¡Ahora estás listo para escribir código de Python con estilo y eficiencia!
+
+---
+
+---
 ## Creación de la primera aplicación
 
 **Creación de un espacio de trabajo ("workspace")**
@@ -327,11 +322,50 @@ Verás la salida en la consola:
 ¡Listo! Has creado y ejecutado tu primera aplicación Python. Este es solo un ejemplo simple, pero puedes comenzar a construir proyectos más complejos a partir de aquí. ¡Diviértete programando en Python!
 
 ---
+## Sintaxis y semántica de Python
+La sintaxis y la semántica son dos aspectos clave en cualquier lenguaje de programación, incluido Python. Aquí tienes una explicación con ejemplos específicos del código que proporcionaste:
+
+**Sintaxis:**
+
+La sintaxis se refiere a las reglas y estructuras que rigen la construcción de programas en un lenguaje de programación específico. En Python, la sintaxis es legible y utiliza la indentación para delimitar bloques de código.
+
+**Ejemplo:**
+
+```python
+print("Hola Mundo")
+print(45)
+```
+
+En este código:
+
+- La función `print()` se utiliza para imprimir valores en la consola.
+- Los paréntesis `()` son necesarios para indicar que `print` es una función.
+- Las cadenas de texto están envueltas entre comillas dobles (`"`) y los números no necesitan comillas.
+
+**Semántica:**
+
+La semántica se refiere al significado de las construcciones en un lenguaje de programación. Es decir, cómo se interpretan y ejecutan las instrucciones. La semántica de Python es bastante sencilla y orientada a objetos.
+
+**Ejemplo:**
+
+```python
+print("Hola Mundo")  # Imprime la cadena de texto "Hola Mundo"
+print(45)            # Imprime el número 45
+```
+
+- La primera línea imprime la cadena de texto "Hola Mundo" en la consola.
+- La segunda línea imprime el número 45 en la consola.
+
+Ambas líneas son instrucciones independientes y se ejecutan secuencialmente. La semántica de Python asegura que la función `print` muestre el valor proporcionado como argumento en la consola.
+
+En resumen, la sintaxis de Python te permite escribir código de manera estructurada, y la semántica garantiza que el código tenga un significado y un comportamiento específicos. En este caso, el código simplemente imprime un saludo y un número en la consola.
+
+---
 ## Resumen
 
 ¡Felicitaciones! Has completado la configuración de tu entorno de desarrollo y has dado tus primeros pasos al crear y ejecutar tu primer programa en Python. Este logro marca el emocionante inicio de tu travesía para convertirte en un hábil programador de Python.
 
-### Sigue aprendiendo y explorando con tutoriales en línea
+**Sigue aprendiendo y explorando con tutoriales en línea**
 
 Continúa tu camino de aprendizaje con recursos adicionales:
 
@@ -339,7 +373,7 @@ Continúa tu camino de aprendizaje con recursos adicionales:
   
 - **Python para principiantes:** Explora recursos específicos para principiantes en Microsoft Learn: [https://learn.microsoft.com/es-es/training/paths/beginner-python/](https://learn.microsoft.com/es-es/training/paths/beginner-python/)
 
-### Nota:
+**Nota:**
 **Si te gustó esta sección, apoya el curso con una calificación de 5 estrellas**:
 ⭐⭐⭐⭐⭐
 Tu opinión es valiosa. Deja un mensaje expresando tus impresiones y agradecimientos. Estamos emocionados de ser parte de tu viaje en el fascinante mundo de Python. ¡Sigamos construyendo conocimiento juntos!

@@ -1,12 +1,11 @@
 # Variables y datos
 
 1. [Introducción](#introducción)
-2. [Sintaxis y semántica de Python]()
-3. [Variables](#variables)
-4. [Tipos de datos](#tipos-de-datos)
-5. [Entrada de datos](#entrada-de-datos)
-6. [Conversión de tipos](#conversión-de-tipos)
-7. [Proyecto de sección](#proyectos-de-sección)
+2. [Variables](#variables)
+3. [Tipos de datos](#tipos-de-datos)
+4. [Entrada de datos](#entrada-de-datos)
+5. [Conversión de tipos](#conversión-de-tipos)
+6. [Proyecto de sección](#proyectos-de-sección)
 8. [Resumen](#resumen)
 
 ---
@@ -19,45 +18,6 @@ A lo largo de esta sección, también exploraremos cómo funcionan los operadore
 La conversión de tipos es otro tema fundamental que abordaremos, ya que nos permitirá cambiar el tipo de dato de una variable según nuestras necesidades. Finalmente, para poner en práctica todo lo que aprendamos, trabajaremos en un emocionante proyecto de sección que consolidará nuestros conocimientos y nos dará la oportunidad de aplicar lo aprendido en situaciones del mundo real.
 
 Así que prepárense para sumergirse en el fascinante mundo de las variables y datos en Python. ¡Estamos emocionados de acompañarlos en este viaje de aprendizaje!
-
----
-## Sintaxis y semántica de Python
-La sintaxis y la semántica son dos aspectos clave en cualquier lenguaje de programación, incluido Python. Aquí tienes una explicación con ejemplos específicos del código que proporcionaste:
-
-### Sintaxis:
-
-La sintaxis se refiere a las reglas y estructuras que rigen la construcción de programas en un lenguaje de programación específico. En Python, la sintaxis es legible y utiliza la indentación para delimitar bloques de código.
-
-#### Ejemplo:
-
-```python
-print("Hola Mundo")
-print(45)
-```
-
-En este código:
-
-- La función `print()` se utiliza para imprimir valores en la consola.
-- Los paréntesis `()` son necesarios para indicar que `print` es una función.
-- Las cadenas de texto están envueltas entre comillas dobles (`"`) y los números no necesitan comillas.
-
-### Semántica:
-
-La semántica se refiere al significado de las construcciones en un lenguaje de programación. Es decir, cómo se interpretan y ejecutan las instrucciones. La semántica de Python es bastante sencilla y orientada a objetos.
-
-#### Ejemplo:
-
-```python
-print("Hola Mundo")  # Imprime la cadena de texto "Hola Mundo"
-print(45)            # Imprime el número 45
-```
-
-- La primera línea imprime la cadena de texto "Hola Mundo" en la consola.
-- La segunda línea imprime el número 45 en la consola.
-
-Ambas líneas son instrucciones independientes y se ejecutan secuencialmente. La semántica de Python asegura que la función `print` muestre el valor proporcionado como argumento en la consola.
-
-En resumen, la sintaxis de Python te permite escribir código de manera estructurada, y la semántica garantiza que el código tenga un significado y un comportamiento específicos. En este caso, el código simplemente imprime un saludo y un número en la consola.
 
 ---
 ## Variables
