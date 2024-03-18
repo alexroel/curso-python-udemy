@@ -27,6 +27,7 @@ En esta sección, nos enfocaremos en:
 - **Consola interactiva de Python:** Explora un espacio interactivo para experimentar y probar tu código.
 - **Instalar Visual Studio Code:** Descubre cómo configurar este entorno de desarrollo popular y versátil.
 - **Creación de la primera aplicación:** Guía paso a paso para crear tu primera aplicación en Python, estableciendo una base sólida.
+- **Sintaxis y semántica de Python:** La sintaxis y la semántica son dos aspectos clave en cualquier lenguaje de programación, incluido Python.
 
 Estamos emocionados de acompañarte en este viaje de descubrimiento y aprendizaje. ¡Vamos a sumergirnos en el mundo de Python y comenzar a construir juntos!
 
@@ -153,11 +154,11 @@ Con estos simples pasos, ahora está listo para sumergirse en el emocionante via
 
 ---
 ## Consola interactiva de Python
-#### ¿Qué es?
+**¿Qué es?**
 
 La consola interactiva de Python, también conocida como el intérprete interactivo, es una interfaz de línea de comandos que permite a los usuarios interactuar directamente con el intérprete de Python. En lugar de escribir un programa completo en un archivo, puedes ingresar instrucciones una a una y obtener resultados inmediatos.
 
-#### ¿Para qué se usa?
+**¿Para qué se usa?**
 
 1. **Pruebas Rápidas:** Es útil para probar rápidamente fragmentos de código sin tener que escribir un programa completo.
 
@@ -167,7 +168,7 @@ La consola interactiva de Python, también conocida como el intérprete interact
 
 4. **Exploración de Bibliotecas y Módulos:** Puedes probar funciones y métodos de bibliotecas directamente en la consola interactiva para entender cómo funcionan.
 
-#### Ejemplos de uso básico:
+**Ejemplos de uso básico:**
 
 **Operaciones Aritméticas:**
  
@@ -265,8 +266,8 @@ Con Visual Studio Code instalado y configurado con estas extensiones, disfrutar�
 Un espacio de trabajo es simplemente un directorio que contendrá tus proyectos. Puedes crear uno nuevo y navegar a él desde la terminal. Abre la terminal y ejecuta los siguientes comandos:
 
 ```bash
-mkdir workspaces
-cd workspaces
+mkdir curso-python
+cd curso-python
 ```
 
 **Creación de un proyecto "hola-mundo"**
