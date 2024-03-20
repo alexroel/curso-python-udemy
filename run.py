@@ -1,19 +1,18 @@
-print("Hola Mundo")
 
-# Hola este es un comentario 
+#mensaje = input("Ingrese el mensaje: ")
+#print(mensaje)
 
-# Creando una clase en python 
+# import sys
 
-class Person:
-    def __init__(self, nombre, edad) -> None:
-        self.nombre = nombre
-        self.edad = edad
-    
-    def __str__(self) -> str:
-        return f"Persona[Nombre: {self.nombre}, Edad: {self.edad}]"
+# mensaje = sys.argv[1]
+# print(mensaje)
 
-# Instancia de una clase
+n1 = input("Ingrese primer número: ")
+n2 = input("Ingrese segundo número: ")
 
-p1 = Person("Alex", 29)
+n1 = int(n1)
+n2 = int(n2)
 
-print(p1)
+suma = n1 + n2
+
+print(f"La suma de {n1} + {n2} = {suma}")

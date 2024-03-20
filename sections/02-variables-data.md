@@ -2,10 +2,11 @@
 
 1. [Introducción](#introducción)
 2. [Variables](#variables)
-3. [Tipos de datos](#tipos-de-datos)
+3. [Números en Python](#números-en-python)
 4. [Entrada de datos](#entrada-de-datos)
 5. [Conversión de tipos](#conversión-de-tipos)
 6. [Proyecto de sección](#proyectos-de-sección)
+7. [Comentarios](#comentarios)
 8. [Resumen](#resumen)
 
 ---
@@ -100,44 +101,101 @@ print(mensaje)
 Recuerda que la elección de nombres de variables debe ser significativa y seguir convenciones de estilo para hacer tu código más legible y mantenible. Por ejemplo, PEP 8 es la guía de estilo de código recomendada para Python y ofrece pautas sobre cómo nombrar variables y otras convenciones de codificación.
 
 ---
-## Tipos de datos
-A continuación, se presenta una tabla con algunos tipos de datos en Python, cómo identificar su tipo y ejemplos de cada uno:
+## Números en Python
 
-| Tipo de Dato | Descripción                                          | Ejemplo               | Cómo Saber el Tipo  |
-|--------------|------------------------------------------------------|-----------------------|----------------------|
-| `int`        | Números enteros sin decimales                        | `edad = 25`           | `type(edad)`         |
-| `float`      | Números con decimales                                | `altura = 1.75`       | `type(altura)`       |
-| `str`        | Cadenas de texto                                     | `nombre = "Juan"`     | `type(nombre)`       |
-| `bool`       | Valores de verdad o falsedad (booleanos)             | `es_mayor = True`     | `type(es_mayor)`     |
-| `list`       | Listas: colecciones ordenadas de elementos           | `numeros = [1, 2, 3]`  | `type(numeros)`      |
-| `tuple`      | Tuplas: colecciones inmutables de elementos          | `coordenadas = (3, 7)`| `type(coordenadas)`  |
-| `dict`       | Diccionarios: pares clave-valor                      | `persona = {'nombre': 'Ana', 'edad': 30}`| `type(persona)`  |
-| `set`        | Conjuntos: colecciones no ordenadas de elementos únicos | `colores = {'rojo', 'verde', 'azul'}` | `type(colores)` |
+Los números son una parte fundamental en la programación, y Python ofrece una amplia variedad de tipos numéricos para trabajar. Desde enteros simples hasta números complejos, Python proporciona una flexibilidad excepcional para manejar diferentes tipos de datos numéricos. En esta guía, exploraremos los distintos tipos de números en Python, cómo se definen y algunas operaciones básicas que se pueden realizar con ellos.
 
-Para saber el tipo de dato de una variable, puedes utilizar la función `type()`. Por ejemplo:
+**¿Qué es un número en Python?**
+
+En Python, un número es un tipo de dato que representa un valor numérico. Hay varios tipos de números en Python, incluyendo enteros, números de punto flotante y números complejos. Cada tipo de número tiene sus propias características y se puede manipular de diversas formas.
+
+**Números enteros**
+
+Los números enteros son aquellos que no tienen parte fraccionaria y pueden ser positivos o negativos. En Python, los números enteros se representan con el tipo de dato `int`.
 
 ```python
-dato = 42
-print(type(dato))  # Salida: <class 'int'>
+>>> num = 10
+>>> num
+10
+>>> num * 2
+20
+>>> num2 = "20"
+>>> num2
+'20'
+>>> num * 2
+20
+>>> num2 * 2
+'2020'
+>>>
+>>> type(num)
+<class 'int'>
+>>> type(num2)
+<class 'str'>
 ```
 
-A continuación, algunos ejemplos adicionales:
+Es importante tener en cuenta que los números enteros pueden ser representados como cadenas de caracteres, pero las operaciones con ellas no se comportan como números.
 
-- Listas de diferentes tipos de datos:
+**Declaración de números grandes**
 
-  ```python
-  mix_lista = [1, "dos", 3.0, True]
-  ```
+Python permite la declaración de números grandes. Se pueden separar los dígitos usando guiones bajos (`_`) para mejorar la legibilidad, como se muestra a continuación:
 
-- Operaciones con tipos de datos:
+```python
+>>> n = 1000000
+>>> n
+1000000
+>>> n = 1_000_000
+>>> n
+1000000
+```
 
-  ```python
-  a = 5
-  b = 2.0
-  resultado = a + b  # El resultado será un float
-  ```
+Esta sintaxis con guiones bajos hace que sea más fácil leer números grandes sin afectar su valor.
 
-Estos ejemplos ilustran cómo Python es dinámicamente tipado, lo que significa que el tipo de una variable puede cambiar durante la ejecución del programa. Sin embargo, es importante comprender y gestionar los tipos de datos para evitar errores y mejorar la legibilidad del código.
+**Números de punto flotante**
+
+Los números de punto flotante son aquellos que tienen una parte fraccionaria. En Python, se representan con el tipo de dato `float`.
+
+```python
+>>> num = 10.5
+>>> type(num)
+<class 'float'>
+>>> num = 1000000.5
+>>> num
+1000000.5
+>>> num2 = 1_000_000.5
+>>> num2
+1000000.5
+>>> num3 = 1e6
+>>> num3
+1000000.0
+>>> num = 2e400
+>>> num
+inf
+>>> num = -2e400
+>>> num
+-inf
+```
+
+Los números de punto flotante también pueden representarse en notación científica, como `1e6`, que equivale a 1,000,000.
+
+**Números complejos**
+
+Los números complejos son aquellos que tienen una parte real e imaginaria. En Python, se representan con el tipo de dato `complex`.
+
+```python
+>>> num = 1 + 2j
+>>> num
+(1+2j)
+>>> type(num)
+<class 'complex'>
+>>> num.real
+1.0
+>>> num.imag
+2.0
+```
+
+En un número complejo, la parte real se refiere al componente real del número, mientras que la parte imaginaria se refiere al componente imaginario del número.
+
+En conclusión, Python ofrece una amplia gama de tipos numéricos que pueden ser utilizados para realizar diversas operaciones matemáticas. Desde enteros simples hasta números complejos, la capacidad de manipular números es fundamental en la programación y Python proporciona las herramientas necesarias para hacerlo de manera efectiva y eficiente.
 
 ---
 ## Entrada de datos
@@ -145,8 +203,8 @@ Estos ejemplos ilustran cómo Python es dinámicamente tipado, lo que significa 
 1. **Función `input()`**: La función `input()` permite al usuario introducir datos desde la consola. Ten en cuenta que los datos introducidos se almacenan como cadenas.
 
 ```python
-nombre = input("Por favor, ingresa tu nombre: ")
-print("Hola,", nombre)
+mensaje = input("Ingrese el mensaje: ")
+print(mensaje)
 ```
 
 
@@ -155,21 +213,21 @@ print("Hola,", nombre)
    Puedes pasar argumentos directamente al script cuando lo ejecutas desde la línea de comandos:
 
   ```python
-   # script.py
-   import sys
+  # hola.py
+  import sys
 
    
-    nombre = sys.argv[1]
-    print("Hola, " + nombre + "!")
-   ```
+  mensaje = sys.argv[1]
+  print(mensaje)
+  ```
 
    Puedes ejecutar el script así:
 
    ```bash
-   python script.py Juan
+   python hola.py "Hola Mundo"
    ```
 
-   Y obtendrás la salida: "Hola, Juan!".
+   Y obtendrás la salida: "Hola Mundo".
 
 ---
 ## Conversión de tipos
@@ -201,28 +259,63 @@ En Python, la conversión de tipos se refiere a la capacidad de cambiar el tipo 
      numero = float(cadena)
      ```
 
-3. Conversión de cadena a lista y viceversa:
-   - Para convertir una cadena en una lista de caracteres, puedes usar la función `list()`. Esto creará una lista donde cada carácter de la cadena se convierte en un elemento de la lista.
-     ```python
-     cadena = "Hola"
-     lista = list(cadena)
-     ```
+**Ejemplo de suma de dos números**
 
-   - Para convertir una lista de caracteres en una cadena, puedes usar el método `join()`. Por ejemplo:
-     ```python
-     lista = ['H', 'o', 'l', 'a']
-     cadena = ''.join(lista)
-     ```
+```python
+n1 = input("Ingrese primer número: ")
+n2 = input("Ingrese segundo número: ")
 
-4. Conversión de otros tipos:
-   - Puedes usar las funciones de conversión correspondientes, como `bool()`, `str()`, `int()`, `float()`, etc., para convertir entre otros tipos de datos, como booleanos, listas, tuplas, diccionarios, conjuntos, etc.
+n1 = int(n1)
+n2 = int(n2)
 
-Recuerda que las conversiones de tipos deben realizarse con precaución y teniendo en cuenta posibles excepciones, especialmente cuando se convierten datos que pueden no ser compatibles.
+suma = n1 + n2
+
+print(f"La suma de {n1} + {n2} = {suma}")
+```
+
+---
+## Comentarios
+
+Los comentarios en Python son porciones de texto que se utilizan para explicar el código o hacer anotaciones dentro del mismo. Los comentarios no se ejecutan como parte del programa y son ignorados por el intérprete de Python. Sirven para mejorar la legibilidad del código y para documentar su funcionamiento.
+
+**Comentarios básicos**
+
+En Python, los comentarios básicos se crean precediendo el texto con el símbolo `#`. Todo lo que esté después del `#` en la misma línea se considera un comentario y no será ejecutado.
+
+Ejemplo:
+
+```python
+# Este es un comentario básico en Python
+numero = 10  # Esta línea asigna el valor 10 a la variable "numero"
+```
+
+En el ejemplo anterior, el comentario después del símbolo `#` explica la acción que realiza la línea de código siguiente.
+
+**Comentarios de varias líneas**
+
+Los comentarios de varias líneas son útiles cuando se necesita explicar un bloque más extenso de código. En Python, se pueden crear comentarios de varias líneas utilizando comillas triples (`'''` o `"""`).
+
+Ejemplo:
+
+```python
+'''
+Este es un comentario
+de varias líneas en Python.
+Puede abarcar múltiples líneas
+y es útil para documentar
+bloques extensos de código.
+'''
+numero = 10
+```
+
+En este caso, todo el texto entre las comillas triples es considerado un comentario y no será ejecutado por el intérprete de Python.
+
+Los comentarios son una herramienta invaluable para mejorar la claridad y la comprensión del código, tanto para el programador que lo escribe como para otros que puedan leerlo en el futuro. Es importante usarlos de manera efectiva para explicar la lógica detrás del código y hacer que sea más fácil de entender.
 
 ---
 ## Proyectos de sección 
 
-### Calcular el Precio de Venta
+**Calcular el Precio de Venta**
 
 **Enunciado:**
 Dado el valor de venta de un producto, se debe calcular el Impuesto General a las Ventas (IGV) que es del 18%, y a partir de eso, determinar el precio de venta final.

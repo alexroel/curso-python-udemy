@@ -251,12 +251,11 @@ Haz clic en "Next" y luego en "Finish" para completar la instalación. Visual St
 Una de las características poderosas de Visual Studio Code es su capacidad para admitir extensiones que personalizan y amplían sus funciones. Aquí te recomendamos algunas extensiones que mejorarán tu experiencia de desarrollo.
 
 **1. Python:** Para habilitar el soporte completo de Python en Visual Studio Code
-**2. Atom One Dark Theme:** Atom One Dark Theme es un tema de color que agrega un toque estético a tu entorno de desarrollo.
+**2. One Dark Theme:** One Dark Theme es un tema de color que agrega un toque estético a tu entorno de desarrollo.
 **3. Fluent Icons y Symbols:** Esta extensión agrega iconos a los archivos y carpetas en el explorador de Visual Studio Code
 
 Con Visual Studio Code instalado y configurado con estas extensiones, disfrutarás de un entorno de desarrollo personalizado y altamente funcional. El soporte total para Python y las mejoras visuales proporcionadas por los temas y los iconos mejorarán significativamente tu experiencia de codificación. ¡Ahora estás listo para escribir código de Python con estilo y eficiencia!
 
----
 
 ---
 ## Creación de la primera aplicación
