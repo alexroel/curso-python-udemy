@@ -27,319 +27,244 @@ Al abordar estos aspectos, fortaleceremos nuestras habilidades en el control de 
 
 ---
 ## Tipos de errores
-En Python, los errores se dividen principalmente en dos categorías: errores de sintaxis y excepciones. Aquí te proporciono una descripción de ambas:
+Python es un lenguaje de programación muy poderoso y versátil, pero como cualquier otro lenguaje, los errores son una parte inevitable del proceso de desarrollo. Los errores en Python se pueden clasificar en dos categorías principales: errores de sintaxis y excepciones. En esta guía, exploraremos ambos tipos de errores y proporcionaremos ejemplos para ayudarte a entenderlos mejor.
 
-1. **Errores de Sintaxis:**
-   - *Descripción:* Los errores de sintaxis ocurren cuando el intérprete de Python no puede interpretar el código porque no sigue las reglas gramaticales del lenguaje. Estos errores se detectan durante la fase de análisis y previenen que el programa se ejecute.
-   - *Ejemplo:*
-     ```python
-     print("Hola Mundo"  # Falta cerrar paréntesis
-     ```
+**Errores de Sintaxis**
 
-2. **Excepciones:**
-   - *Descripción:* Las excepciones son eventos inesperados que ocurren durante la ejecución de un programa. A diferencia de los errores de sintaxis, las excepciones no impiden que el programa se ejecute por completo, pero deben ser manejadas para evitar que el programa termine abruptamente.
-   - *Ejemplo:*
-     ```python
-     divisor = 0
-     resultado = 10 / divisor  # Generará un ZeroDivisionError
-     ```
-
-   Algunas excepciones comunes en Python incluyen:
-   - `ZeroDivisionError`: Ocurre cuando intentas dividir por cero.
-   - `TypeError`: Se produce cuando hay un error en el tipo de datos (por ejemplo, operaciones no válidas entre tipos).
-   - `ValueError`: Sucede cuando una función recibe un argumento con un valor inapropiado.
-   - `FileNotFoundError`: Se produce cuando intentas abrir un archivo que no existe.
-
-Además de estas, Python tiene una amplia variedad de excepciones integradas, y los desarrolladores también pueden definir sus propias excepciones personalizadas.
+Los errores de sintaxis ocurren cuando el intérprete de Python no puede entender tu código debido a una violación de las reglas del lenguaje. Estos errores suelen ser detectados durante la etapa de análisis del código antes de que se ejecute. Aquí hay un ejemplo de un error de sintaxis común:
 
 ```python
-# Entrada de datos 
-a = int(input('Ingrese un número entero: '))
-b = int(input('Ingrese un número entero: '))
-
-# Proceso
-
-d = a / b
-
-# Salida 
-print(f"División entre {a}/{b} = {d}")
+print("Hola Mundo)
+  File "<stdin>", line 1
+    print("Hola Mundo)
+          ^
+SyntaxError: unterminated string literal (detected at line 1)
 ```
 
-Es importante comprender la diferencia entre errores de sintaxis y excepciones, ya que el manejo adecuado de excepciones es esencial para crear programas robustos y prevenir la terminación inesperada debido a situaciones excepcionales durante la ejecución.
+En este caso, el error ocurre porque falta una comilla de cierre en la cadena `"Hola Mundo"`. Python detecta este error durante la fase de análisis y muestra un mensaje de error indicando la ubicación del problema y el tipo de error (`SyntaxError` en este caso).
+
+
+**Excepciones**
+
+Las excepciones son errores que ocurren durante la ejecución de un programa. Estos errores pueden ser manejados y, en algunos casos, pueden permitir que el programa continúe ejecutándose incluso después de un problema. Aquí hay algunos ejemplos de excepciones comunes en Python:
+
+1. **NameError**
+
+```python
+>>> print(var)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'var' is not defined. Did you mean: 'vars'?
+```
+
+Este error ocurre cuando intentas usar una variable que no ha sido definida previamente. En este caso, Python no puede encontrar la variable `var` y muestra un `NameError`.
+
+2. **ZeroDivisionError**
+
+```python
+>>> 50/0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+```
+
+Este error ocurre cuando intentas dividir un número por cero, lo cual es una operación indefinida en matemáticas. Python muestra un `ZeroDivisionError` para indicar que la operación no se puede realizar.
+
+3. **TypeError**
+
+```python
+>>> "4" + 4
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+```
+
+Este error ocurre cuando intentas realizar una operación entre dos tipos de datos incompatibles. En este caso, estás intentando concatenar una cadena (`"4"`) con un entero (`4`), lo cual no es válido en Python, y se genera un `TypeError`.
 
 ---
 ## Control de Excepciones
-El control de excepciones en Python se refiere a la práctica de manejar situaciones excepcionales durante la ejecución de un programa para evitar que este se detenga de manera abrupta. Aquí hay algunas estrategias y elementos clave relacionados con el control de excepciones en Python:
+El control de excepciones en Python es una técnica fundamental para escribir programas robustos y que manejen adecuadamente situaciones inesperadas. En esta guía, aprenderás a utilizar los bloques `try-except` para manejar excepciones, manejar múltiples excepciones, emplear la cláusula `else` y la cláusula `as` en conjunto con `except`.
 
-1. **Bloque try-except:**
-   - **Descripción:** El bloque `try` se utiliza para envolver un conjunto de instrucciones donde se espera que ocurran excepciones. Si se produce una excepción dentro del bloque `try`, el control se transfiere al bloque `except` correspondiente.
-   - **Ejemplo:**
-     ```python
-        # Entrada de datos
-        try:
-            a = int(input('Ingrese un número entero: '))
-            b = int(input('Ingrese un número entero diferente de cero: '))
+**Bloque Try-Except**
 
-            # Proceso
-            resultado = a / b
+El bloque `try-except` es una estructura que te permite manejar excepciones de manera controlada. Aquí tienes un ejemplo básico:
 
-            # Salida
-            print(f"División entre {a}/{b} = {resultado}")
+```python
+try:
+    # Código que puede lanzar una excepción
+    a = int(input('Ingrese un número entero: '))
+    b = int(input('Ingrese un número entero diferente de cero: '))
+    resultado = a / b
 
-        except ValueError:
-            print("Error: Ingrese un número entero válido.")
-        except ZeroDivisionError:
-            print("Error: El segundo número no puede ser cero.")
-     ```
+    print(f"División entre {a}/{b} = {resultado}")
+except Exception as e:
+    # Manejo de la excepción
+    print(f"Ocurrió un error: {e}")
+```
 
-2. **Cláusula else en bloques try-except:**
-   - **Descripción:** La cláusula `else` se utiliza para especificar un conjunto de instrucciones que se ejecutarán solo si no se produce ninguna excepción dentro del bloque `try`. Esto permite separar el código propenso a errores del código que debe ejecutarse en condiciones normales.
-   - **Ejemplo:**
-     ```python
-     # Entrada de datos
-    try:
-        a = int(input('Ingrese un número entero: '))
-        b = int(input('Ingrese un número entero: '))
-
-        # Proceso
-        resultado = a / b
-
-    except ValueError:
-        print("Error: Ingrese un número entero válido.")
-    except ZeroDivisionError:
-        print("Error: El segundo número no puede ser cero.")
-    else:
-        # Salida
-        print(f"División entre {a}/{b} = {resultado}")
+En este ejemplo, el código dentro del bloque `try` es susceptible de lanzar una excepción. Si se produce una excepción, el programa salta al bloque `except`, donde puedes manejar el error de manera adecuada. La cláusula `as` te permite asignar la excepción a una variable para su posterior uso.
 
 
-     ```
+**Múltiples Excepciones**
 
-3. **Utilización de la cláusula `as` en la declaración `except`:**
-   - **Descripción:** La cláusula `as` se utiliza para asignar la excepción capturada a una variable, permitiendo acceder a información más detallada sobre la excepción.
-   - **Ejemplo:**
-     ```python
-     # Entrada de datos
-    try:
-        a = int(input('Ingrese un número entero: '))
-        b = int(input('Ingrese un número entero: '))
+Puedes manejar diferentes tipos de excepciones de manera individual utilizando múltiples bloques `except`. Por ejemplo:
 
-        # Proceso
-        resultado = a / b
+```python
+try:
+    # Código que puede lanzar una excepción
+    a = int(input('Ingrese un número entero: '))
+    b = int(input('Ingrese un número entero diferente de cero: '))
+    resultado = a / b
+    print(f"División entre {a}/{b} = {resultado}")
+except ZeroDivisionError:
+    print("¡Error! No puedes dividir entre cero.")
+except ValueError:
+    print("¡Error! Debes ingresar números enteros.")
+except Exception as e:
+    print(f"Ocurrió un error inesperado: {e}")
+```
 
-        # Salida
-        print(f"División entre {a}/{b} = {resultado}")
+En este caso, se manejan tres tipos diferentes de excepciones: `ZeroDivisionError`, `ValueError` y cualquier otra excepción no especificada.
 
-    except ValueError:
-        print("Error: Ingrese un número entero válido.")
-    except ZeroDivisionError:
-        print("Error: El segundo número no puede ser cero.")
-    except Exception as e:
-        print(f"Error inesperado: {e}")
-     ```
+**Uso de Else**
 
-Al emplear estas técnicas, puedes escribir programas más robustos que manejen errores de manera controlada y, al mismo tiempo, faciliten la depuración y el mantenimiento del código.
+La cláusula `else` en un bloque `try-except` se ejecuta si no se produce ninguna excepción. Puedes usarla para ejecutar código que depende del éxito del bloque `try`. Por ejemplo:
+
+```python
+try:
+    # Código que puede lanzar una excepción
+    a = int(input('Ingrese un número entero: '))
+    b = int(input('Ingrese un número entero diferente de cero: '))
+    resultado = a / b
+except ZeroDivisionError:
+    print("¡Error! No puedes dividir entre cero.")
+except ValueError:
+    print("¡Error! Debes ingresar números enteros.")
+except Exception as e:
+    print(f"Ocurrió un error inesperado: {e}")
+else:
+    print(f"División entre {a}/{b} = {resultado}")
+```
+
+En este caso, el bloque `else` se ejecuta solo si no se lanzó ninguna excepción dentro del bloque `try`.
 
 ---
 ## Generación de excepciones
-Ahora que has adquirido una buena comprensión de los seguimientos y el control de excepciones, exploraremos la generación de excepciones en Python. En situaciones en las que ya identificas condiciones de error mientras escribes código, generar excepciones puede resultar útil para que otros fragmentos de código comprendan el problema.
+En Python, la generación de excepciones es una técnica fundamental que te permite indicar que ha ocurrido un error o una situación excepcional dentro de tu código. Esto facilita el manejo adecuado de casos inesperados y mejora la robustez de tus programas. En esta guía, aprenderás cómo generar excepciones personalizadas utilizando el ejemplo proporcionado.
 
-La generación de excepciones no solo ayuda a señalar errores, sino que también facilita la toma de decisiones en otros fragmentos de código. Como vimos anteriormente, según el tipo de error, el código puede tomar decisiones inteligentes para resolver, solucionar o ignorar un problema.
+**Generación de Excepciones Personalizadas**
 
-Tomemos el ejemplo de astronautas que limitan su consumo de agua a unos 11 litros al día. Vamos a crear una función que, en función del número de astronautas, calcule la cantidad de agua que quedará después de un día o más:
-
-```python
-def agua_restante(astronautas, agua_restante, dias_restantes):
-    consumo_diario = astronautas * 11
-    consumo_total = consumo_diario * dias_restantes
-    agua_total_restante = agua_restante - consumo_total
-    return f"El total de agua restante después de {dias_restantes} días es: {agua_total_restante} litros"
-```
-
-Probemos la función con cinco astronautas, 100 litros de agua restante y dos días:
+En Python, puedes generar excepciones personalizadas utilizando la palabra clave `raise`. Esto te permite lanzar una excepción en cualquier punto de tu código cuando detectas una situación que requiere atención especial. Aquí tienes un ejemplo:
 
 ```python
-agua_restante(5, 100, 2)
+def colores(color):
+    lista_colores = ["azul", "verde", "rojo"]
+
+    if color not in lista_colores:
+        raise Exception(f"El color {color} no se encuentra en la lista de colores permitidos.")
+
+colores("amarillo")
 ```
 
-Obtenemos un resultado negativo: `'El total de agua restante después de 2 días es: -10 litros'`. Esto no es útil, ya que una cantidad negativa de litros sería un error. El sistema de navegación podría alertar a los astronautas de que no habrá suficiente agua para todos en dos días. Si eres un ingeniero que programa el sistema de navegación, podrías generar una excepción en la función `agua_restante()` para alertar sobre la condición de error:
+En este ejemplo, la función `colores` verifica si el color pasado como argumento está presente en una lista de colores permitidos. Si el color no está en la lista, se genera una excepción utilizando `raise`. La excepción generada es de tipo `Exception`, pero puedes crear excepciones personalizadas creando tus propias clases de excepción.
+
+
+**Clases de Excepción Personalizadas**
+
+Puedes crear tus propias clases de excepción para representar situaciones específicas en tu código. Esto te permite capturar y manejar esos casos de manera más precisa. Aquí tienes un ejemplo de cómo crear una clase de excepción personalizada:
 
 ```python
-def agua_restante(astronautas, agua_restante, dias_restantes):
-    consumo_diario = astronautas * 11
-    consumo_total = consumo_diario * dias_restantes
-    agua_total_restante = agua_restante - consumo_total
-    if agua_total_restante < 0:
-        raise RuntimeError(f"No hay suficiente agua para {astronautas} astronautas después de {dias_restantes} días.")
-    return f"El total de agua restante después de {dias_restantes} días es: {agua_total_restante} litros"
+class ColorNoValidoError(Exception):
+    def __init__(self, color):
+        super().__init__(f"El color {color} no se encuentra en la lista de colores permitidos.")
+
+def colores(color):
+    lista_colores = ["azul", "verde", "rojo"]
+
+    if color not in lista_colores:
+        raise ColorNoValidoError(color)
+
+colores("amarillo")
 ```
 
-Al ejecutar la función nuevamente:
+En este ejemplo, hemos creado la clase `ColorNoValidoError`, que hereda de la clase base `Exception`. Esta clase tiene un método `__init__` que inicializa la excepción con un mensaje personalizado. Luego, en la función `colores`, lanzamos esta excepción personalizada si el color no está en la lista de colores permitidos.
 
-```python
-agua_restante(5, 100, 2)
-```
 
-Obtenemos un rastro de excepción:
+**Manejo de Excepciones Generadas**
 
-```python
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 6, in agua_restante
-RuntimeError: No hay suficiente agua para 5 astronautas después de 2 días.
-```
-
-En el sistema de navegación, el código para señalar la alerta ahora puede usar `RuntimeError` para generar la alerta:
+Cuando generas una excepción, es importante manejarla adecuadamente para que tu programa no se detenga abruptamente. Puedes hacerlo utilizando bloques `try-except` para capturar y manejar las excepciones generadas. Aquí tienes un ejemplo de cómo hacerlo:
 
 ```python
 try:
-    agua_restante(5, 100, 2)
-except RuntimeError as err:
-    alertar_sistema_navegacion(err)
+    colores("amarillo")
+except ColorNoValidoError as error:
+    print(f"Se ha generado una excepción: {error}")
 ```
 
-La función `agua_restante()` también se puede actualizar para evitar el paso de tipos no admitidos. Intentemos pasar argumentos que no sean enteros para comprobar la salida de error:
-
-```python
-agua_restante("3", "200", None)
-```
-
-Obtenemos un mensaje de error más descriptivo:
-
-```python
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 3, in agua_restante
-TypeError: unsupported operand type(s) for -: 'str' and 'int'
-```
-
-El error de `TypeError` no es muy descriptivo en el contexto de lo que espera la función. Actualicemos la función para utilizar `TypeError`, pero con un mensaje mejor:
-
-```python
-def agua_restante(astronautas, agua_restante, dias_restantes):
-    for argumento in [astronautas, agua_restante, dias_restantes]:
-        try:
-            argumento / 10
-        except TypeError:
-            raise TypeError(f"Todos los argumentos deben ser del tipo int, pero se recibió: '{argumento}'")
-    consumo_diario = astronautas * 11
-    consumo_total = consumo_diario * dias_restantes
-    agua_total_restante = agua_restante - consumo_total
-    if agua_total_restante < 0:
-        raise RuntimeError(f"No hay suficiente agua para {astronautas} astronautas después de {dias_restantes} días.")
-    return f"El total de agua restante después de {dias_restantes} días es: {agua_total_restante} litros"
-```
-
-Ahora, al intentar nuevamente obtener un error:
-
-```python
-agua_restante("3", "200", None)
-```
-
-Obtenemos un mensaje de error más claro:
-
-```python
-Traceback (most recent call last):
-  File "<stdin>", line 5, in <module>
-  File "<stdin>", line 9, in agua_restante
-TypeError: Todos los argumentos deben ser del tipo int, pero se recibió: '3'
-```
-
-En resumen, la generación de excepciones es una herramienta poderosa en Python para mejorar la claridad y la robustez del código. Utilizar excepciones de manera estratégica no solo ayuda a identificar y manejar errores, sino que también facilita la comprensión y el mantenimiento del código.
+En este bloque `try-except`, intentamos llamar a la función `colores` con el color "amarillo". Si se genera la excepción `ColorNoValidoError`, la capturamos en el bloque `except` y mostramos un mensaje adecuado.
 
 ---
 ## Manejo de archivos
+El manejo de archivos en Python es una tarea común en la programación, ya sea para leer datos de archivos existentes, escribir datos en archivos o crear nuevos archivos. En esta guía, exploraremos cómo abrir, leer, escribir y cerrar archivos en Python, además de discutir buenas prácticas como el uso de bloques `try-except` y `with`.
 
-El manejo de archivos en Python es una tarea fundamental en el desarrollo de aplicaciones. Python proporciona funciones y métodos integrados que facilitan la lectura, escritura y manipulación de archivos. A continuación, te proporcionaré una introducción básica al manejo de archivos en Python.
+**Abrir y Leer un Archivo**
 
-### Lectura de Archivos
-
-Para leer un archivo en Python, puedes utilizar la función `open()` para abrir el archivo y luego usar el método `read()` para leer su contenido. Aquí hay un ejemplo:
-
-```python
-# Abrir un archivo en modo de lectura
-with open('archivo.txt', 'r') as archivo:
-    contenido = archivo.read()
-    print(contenido)
-```
-
-En este ejemplo, se abre el archivo `archivo.txt` en modo de lectura (`'r'`). La instrucción `with` asegura que el archivo se cierre automáticamente después de su uso.
-
-### Escritura en Archivos
-
-Para escribir en un archivo, puedes utilizar la función `open()` con el modo de escritura (`'w'`). Aquí hay un ejemplo:
-
-```python
-# Abrir un archivo en modo de escritura
-with open('nuevo_archivo.txt', 'w') as archivo:
-    archivo.write('Hola, este es un nuevo archivo.\n')
-    archivo.write('¡Aprender Python es divertido!')
-```
-
-En este caso, se crea un nuevo archivo llamado `nuevo_archivo.txt` y se escribe contenido en él.
-
-### Operaciones Adicionales
-
-Además de leer y escribir, Python proporciona otras operaciones útiles para el manejo de archivos. Algunas de ellas son:
-
-- **Lectura de líneas**: Puedes utilizar el método `readline()` para leer una línea a la vez.
-  ```python
-  with open('archivo.txt', 'r') as archivo:
-      linea = archivo.readline()
-      while linea:
-          print(linea)
-          linea = archivo.readline()
-  ```
-
-- **Lectura de todas las líneas como lista**: Puedes utilizar el método `readlines()` para leer todas las líneas y almacenarlas en una lista.
-  ```python
-  with open('archivo.txt', 'r') as archivo:
-      lineas = archivo.readlines()
-      for linea in lineas:
-          print(linea)
-  ```
-
-- **Iteración directa sobre el archivo**: Puedes iterar directamente sobre las líneas de un archivo utilizando un bucle `for`.
-  ```python
-  with open('archivo.txt', 'r') as archivo:
-      for linea in archivo:
-          print(linea)
-  ```
-
-### Manejo de Errores
-
-Es importante manejar posibles errores al trabajar con archivos, como la posibilidad de que el archivo no exista o que no tengas permisos para leerlo o escribirlo. Puedes hacer esto utilizando bloques `try` y `except`. Por ejemplo:
+Para abrir y leer un archivo en Python, puedes usar la función `open()` con el modo de apertura `"r"` (lectura). Aquí tienes un ejemplo:
 
 ```python
 try:
-    with open('archivo_inexistente.txt', 'r') as archivo:
-        contenido = archivo.read()
-        print(contenido)
+    archivo = open("archivo.txt", "r")
+    contenido = archivo.read()
+    print("Contenido del archivo:")
+    print(contenido)
 except FileNotFoundError:
-    print("El archivo no existe.")
-except Exception as e:
-    print(f"Se produjo un error: {e}")
+    print("El archivo no se ha encontrado.")
+finally:
+    if archivo:
+        archivo.close()
 ```
 
-Esto garantiza que tu programa maneje los posibles errores de manera elegante.
+En este ejemplo, intentamos abrir el archivo `"archivo.txt"` en modo lectura. Si el archivo existe, leemos su contenido y lo imprimimos en la consola. Si el archivo no se encuentra, se maneja la excepción `FileNotFoundError`.
 
-Recuerda que el manejo de archivos puede variar según los requisitos específicos de tu aplicación. A medida que te familiarices más con Python, podrás utilizar módulos adicionales y técnicas avanzadas para trabajar con archivos de manera más eficiente y flexible.
+**Crear un Archivo si no Existe**
 
+Puedes verificar si un archivo existe y, si no existe, crearlo. Aquí tienes un ejemplo que utiliza un bloque `try-except` para manejar esto:
+
+```python
+try:
+    archivo = open("archivo.txt", "r")
+    contenido = archivo.read()
+except FileNotFoundError:
+    print("El archivo no se ha encontrado.")
+    print("Creando el archivo...")
+    archivo = open("archivo.txt", "w")
+    archivo.write("¡Hola mundo!")
+else:
+    print("Contenido del archivo:")
+    print(contenido)
+```
+
+En este ejemplo, utilizamos la declaración `with` para abrir el archivo en modo lectura. Si el archivo no se encuentra, se maneja la excepción `FileNotFoundError` y se crea el archivo en modo escritura `"w"` con el contenido `"¡Hola mundo!"`.
+
+
+**Uso de la Declaración `with`**
+
+La declaración `with` en Python es una forma más limpia y segura de trabajar con archivos. Te asegura que el archivo se cierre automáticamente una vez que el bloque `with` haya terminado de ejecutarse, incluso si ocurren excepciones. Aquí tienes un ejemplo:
+
+```python
+try:
+    with open("archivo.txt", "r") as archivo:
+        contenido = archivo.read()
+    print("Contenido del archivo:")
+    print(contenido)
+except FileNotFoundError:
+    print("El archivo no se ha encontrado.")
+    print("Creando el archivo...")
+    with open("archivo.txt", "w") as archivo:
+        archivo.write("¡Hola mundo!")
+```
+
+En este ejemplo, abrimos el archivo en modo lectura dentro de un bloque `with`. Si el archivo no se encuentra, se maneja la excepción `FileNotFoundError` y se crea el archivo en modo escritura `"w"` dentro de otro bloque `with`. En ambos casos, el archivo se cierra automáticamente al salir del bloque `with`, lo que simplifica el código y lo hace más seguro.
 
 ---
 ## Resumen
-En la sección dedicada al Control de Errores en Python, exploramos diversos aspectos fundamentales para gestionar situaciones imprevistas y mejorar la robustez de nuestros programas. Se abordaron los siguientes temas:
-
-**Tipos de Errores:**
-Antes de abordar el manejo de errores, fue esencial comprender los diferentes tipos de errores que podían surgir en un programa. Python clasifica los errores en varias categorías, desde errores de sintaxis hasta errores de tiempo de ejecución.
-
-**Control de Excepciones:**
-Python utiliza bloques `try` y `except` para gestionar excepciones de manera eficiente. Aprendimos a utilizar esta estructura para capturar y manejar errores, permitiendo que el programa continuara ejecutándose incluso cuando se enfrentaba a condiciones excepcionales.
-
-**Generación de Excepciones:**
-En algunos casos, fue necesario generar excepciones de forma deliberada para señalar condiciones de error específicas. Exploramos cómo crear y lanzar excepciones personalizadas, proporcionando mensajes significativos para facilitar la identificación y resolución de problemas en el código.
-
-**Manejo de Archivos:**
-El manejo de archivos, una tarea común en la programación, fue abordado. Aprendimos a abrir archivos, leer su contenido y escribir en ellos utilizando las funciones y métodos integrados de Python. Además, exploramos las mejores prácticas para garantizar la correcta gestión de recursos al trabajar con archivos.
-
-Al abordar estos aspectos, fortalecimos nuestras habilidades en el control de errores, mejorando la calidad y la confiabilidad de nuestros programas. Nos sumergimos en el fascinante mundo del control de errores en Python.
