@@ -1,21 +1,13 @@
-ruta_archivo = "texto.txt"
+from interfaz import InterfazTareas
+from logica import ControladorTareas
 
-# Abrir un archivo en modo de escritura
-with open(ruta_archivo, 'w') as archivo:
-    archivo.write('Hola, este es un nuevo archivo.\n')
-    archivo.write('¡Aprender Python es divertido!')
+def main():
+    archivo_tareas = "tareas.json"
+    controlador = ControladorTareas(archivo_tareas)
+    interfaz = InterfazTareas(controlador)
+    interfaz.mainloop()
 
-try:
-    with open(ruta_archivo, 'r') as archivo:
-        # contenido = archivo.read()
-        # print(contenido)
-        lineas = archivo.readlines()
-        print(lineas)
-        for linea in lineas:
-            print(linea)  
+if __name__ == "__main__":
+    main()
 
-except FileNotFoundError:
-    print("El archivo no existe")
 
-except Exception as e:
-    print(f"Se produjo un error: {e}")
